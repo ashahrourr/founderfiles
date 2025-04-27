@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation';
 import { FiUser } from 'react-icons/fi';
+import Image from 'next/image';
 
 
 
@@ -52,7 +53,7 @@ export default function Home() {
     };
 
     fetchLikes();
-  }, [selectedStory.id, user]);
+  }, [selectedStory.id, user, supabaseClient]);
 
   // Realtime listener for likes changes
   useEffect(() => {
@@ -94,42 +95,6 @@ export default function Home() {
       supabaseClient.removeChannel(channel);
     };
   }, [selectedStory.id, user]);
-
-  const handleLike = async () => {
-    if (!user) {
-      router.push('/login');   // Redirect to login/signup page
-      return;
-    }
-  
-    try {
-      if (liked) {
-        const { error } = await supabaseClient
-          .from('story_likes')
-          .delete()
-          .eq('story_id', selectedStory.id)
-          .eq('user_id', user.id);
-  
-        if (!error) {
-          setLiked(false);
-          setLikes(prev => prev - 1);
-        }
-      } else {
-        const { error } = await supabaseClient
-          .from('story_likes')
-          .insert({
-            story_id: selectedStory.id,
-            user_id: user.id
-          });
-  
-        if (!error) {
-          setLiked(true);
-          setLikes(prev => prev + 1);
-        }
-      }
-    } catch (error) {
-      console.error('Error updating like:', error);
-    }
-  };
   
 
   // Scroll milestone tracker
@@ -279,13 +244,13 @@ export default function Home() {
             </h1>
           </div>
           <p className="text-xl text-slate-400 mb-8">{selectedStory.teaser}</p>
-          <div className="aspect-video rounded-xl overflow-hidden bg-slate-800">
-<img 
-  src={selectedStory.image} 
-  alt={selectedStory.name} 
-  className="w-full h-full object-cover object-[50%_35%]"
-
-/>
+          <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-800">
+              <Image 
+                src={selectedStory.image}
+                alt={selectedStory.name}
+                fill
+                className="object-cover object-[50%_35%]"
+              />
           </div>
         </header>
 
@@ -302,7 +267,7 @@ export default function Home() {
             if (section.type === 'quote') {
               return (
                 <blockquote key={index} className="border-l-4 border-blue-600 pl-6 my-6 italic text-xl text-slate-300">
-                  "{section.text}"
+                  {section.text}
                   <cite className="not-italic block mt-4 text-base text-slate-500">
                     — {selectedStory.name}
                   </cite>
@@ -465,8 +430,14 @@ function StoryCard({ story, onClick, isActive }: {
       }`}
     >
       <div className="flex items-start gap-4">
-        <div className="w-16 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-slate-900 border border-slate-800">
-          <img src={story.image} alt={story.name} className="w-full h-full object-cover" />
+      <div className="w-16 h-16 flex-shrink-0 relative rounded-lg overflow-hidden bg-slate-900 border border-slate-800">
+  <Image 
+    src={story.image}
+    alt={story.name}
+    fill
+    className="object-cover"
+  />
+
         </div>
         <div className="flex-1 space-y-1 relative pr-8">
           {/* Updated Like Button Position */}
