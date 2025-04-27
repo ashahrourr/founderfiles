@@ -66,18 +66,23 @@ const SuccessMessage = ({ onReset }: { onReset: () => void }) => (
 export default function SuggestPage() {
   const [submitted, setSubmitted] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-
+  
   useEffect(() => {
-    const resizeTextarea = () => {
-      if (textareaRef.current) {
-        textareaRef.current.style.height = 'auto';
-        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
-      }
+    const textarea = textareaRef.current;         // ⭐ snapshot
+  
+    if (!textarea) return;                        // in case it’s null
+  
+    const resize = () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
     };
-
-    textareaRef.current?.addEventListener('input', resizeTextarea);
-    return () => textareaRef.current?.removeEventListener('input', resizeTextarea);
+  
+    textarea.addEventListener('input', resize);
+    resize();                                     // run once for initial height
+  
+    return () => textarea.removeEventListener('input', resize);
   }, []);
+  
 
   return (
     <main className="min-h-screen bg-slate-900 flex flex-col items-center px-4 py-12">

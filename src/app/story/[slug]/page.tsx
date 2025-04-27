@@ -1,11 +1,11 @@
 import { stories } from '@/data/stories';
 import Link from 'next/link';
 
-interface Params {
-  params: { slug: string }
+interface PageProps {
+  params: { slug: string };      // ← params object lives inside PageProps
 }
 
-export default function StoryPage({ params }: Params) {
+export default function StoryPage({ params }: PageProps) {
   const story = stories.find(story => story.id === Number(params.slug));
 
   if (!story) {

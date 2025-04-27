@@ -14,7 +14,7 @@ export default function LogoutPage() {
     if (!user) {
       router.push('/login');
     }
-  }, [user]);
+  }, [user, router]);
 
   if (!user) return null;
 
