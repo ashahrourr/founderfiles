@@ -12,8 +12,8 @@ import Image from 'next/image';
 
 
 export default function Home() {
-  const [selectedStory, setSelectedStory] = useState(stories[0]);
-  const [activeMilestone, setActiveMilestone] = useState(0);
+  const [selectedStory, setSelectedStory] = useState<typeof stories[0] | null>(null);
+  const [activeMilestone, setActiveMilestone] = useState(0);  
   const contentRef = useRef<HTMLDivElement>(null);
   const milestonesRef = useRef<HTMLDivElement>(null);
   const user = useUser();
@@ -21,13 +21,35 @@ export default function Home() {
 
   const router = useRouter();
   
+  // Inside your component
+  useEffect(() => {
+    const savedStoryId = localStorage.getItem('selectedStoryId');
+    if (savedStoryId) {
+      const story = stories.find(s => s.id === Number(savedStoryId));
+      if (story) {
+        setSelectedStory(story);
+        return;
+      }
+    }
+    // If nothing saved, fallback to Today's Story
+    setSelectedStory(stories[0]);
+  }, []);
+  
+
+  const handleSelectStory = (story: typeof stories[0]) => {
+    setSelectedStory(story);
+    localStorage.setItem('selectedStoryId', story.id.toString());
+    window.scrollTo(0, 0);
+  };
+  
 
   // Scroll milestone tracker
   useEffect(() => {
     const handleScroll = () => {
+      if (!selectedStory) return;
       if (!contentRef.current) return;
 
-      const milestones = selectedStory.milestones;
+      const milestones = selectedStory?.milestones || [];
       const contentTop = contentRef.current.offsetTop;
       const contentHeight = contentRef.current.offsetHeight;
       const scrollPosition = window.scrollY - contentTop;
@@ -51,6 +73,7 @@ export default function Home() {
 
   // Progress line animation
   useEffect(() => {
+    if (!selectedStory) return;
     if (!milestonesRef.current) return;
 
     const progressLine = milestonesRef.current.querySelector('.progress-line');
@@ -59,6 +82,36 @@ export default function Home() {
       (progressLine as HTMLElement).style.height = `${progress}%`;
     }
   }, [activeMilestone, selectedStory]);
+
+  if (!selectedStory) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-900 text-slate-400">
+        <svg
+          className="animate-spin h-10 w-10 text-blue-400 mb-4"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          ></circle>
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+          ></path>
+        </svg>
+        <p className="text-lg">Loading your story...</p>
+      </div>
+    );
+  }
+  
+  
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -90,8 +143,10 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <span className="text-slate-200 font-medium text-sm">Suggest Story</span>
+              {/* Hide text on mobile */}
+              <span className="text-slate-200 font-medium text-sm hidden sm:inline">Suggest Story</span>
             </Link>
+
 
             {/* Account Avatar */}
             <div className="relative">
@@ -225,9 +280,7 @@ export default function Home() {
     <h3 className="text-lg font-semibold text-slate-300 px-2">Today&apos;s Story</h3>
     <StoryCard 
       story={stories[0]} 
-      onClick={() => {
-        setSelectedStory(stories[0]);
-      }}
+      onClick={() => handleSelectStory(stories[0])}
       isActive={selectedStory.id === stories[0].id}
     />
   </div>
@@ -239,9 +292,7 @@ export default function Home() {
       <StoryCard 
         key={story.id} 
         story={story} 
-        onClick={() => {
-          setSelectedStory(story);
-        }}
+        onClick={() => handleSelectStory(story)}  
         isActive={selectedStory.id === story.id}
       />
     ))}
