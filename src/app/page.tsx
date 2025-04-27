@@ -13,7 +13,8 @@ import Image from 'next/image';
 
 export default function Home() {
   const [selectedStory, setSelectedStory] = useState<typeof stories[0] | null>(null);
-  const [activeMilestone, setActiveMilestone] = useState(0);  
+  const [activeMilestone, setActiveMilestone] = useState(0); 
+  const [viewingStory, setViewingStory] = useState<typeof stories[0] | null>(null); 
   const contentRef = useRef<HTMLDivElement>(null);
   const milestonesRef = useRef<HTMLDivElement>(null);
   const user = useUser();
@@ -175,135 +176,144 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-12">
-  <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
-    <div className="flex flex-col lg:flex-row gap-8">
-
-      {/* Desktop Milestones Sidebar */}
-      <div ref={milestonesRef} className="hidden lg:block lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] lg:w-[280px] lg:shrink-0 overflow-y-auto pr-2 scrollbar-hide">
-      <h2 className="text-2xl font-bold text-blue-400 mb-6">Key Milestones</h2>
-        <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-blue-600/30">
-          <div className="progress-line absolute left-0 top-0 w-px bg-blue-400 transition-all duration-500" style={{ height: '0%' }} />
-          {selectedStory.milestones.map((milestone, index) => (
-            <div key={index} className="relative pl-8 mb-8 last:mb-0">
-              <div className={`absolute left-0 top-2 -translate-x-1/2 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold text-sm z-10 transition-colors ${
-                index <= activeMilestone ? 'bg-blue-400' : 'bg-blue-600/50'
-              }`}>
-                {index + 1}
-              </div>
-              <div className="pb-6">
-                <h4 className="text-lg font-semibold text-slate-100 mb-2">
-                  <span className="text-blue-400">{milestone.year}</span>: {milestone.title}
-                </h4>
-                <p className="text-slate-400 leading-relaxed text-sm">{milestone.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/*Mobile*/}
+      <div className="lg:hidden">
+        {viewingStory ? (
+          <StoryDetail story={viewingStory} onBack={() => setViewingStory(null)} />
+        ) : (
+          <StoryList onSelectStory={(story) => setViewingStory(story)} />
+        )}
       </div>
 
-      {/* Story Content */}
-      <article className="flex-1" ref={contentRef}>
 
-        {/* Mobile Milestones */}
-        <div className="flex overflow-x-auto gap-4 mb-8 lg:hidden scrollbar-hide">
-          {selectedStory.milestones.map((milestone, index) => (
-            <div key={index} className="min-w-[180px] bg-slate-800 p-3 rounded-lg flex-shrink-0">
-              <h4 className="text-blue-400 font-semibold">{milestone.year}</h4>
-              <p className="text-slate-300 text-sm">{milestone.title}</p>
-            </div>
-          ))}
-        </div>
+      {/* Main Content */}
+      <div className="hidden lg:block">
+        <main className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
+            <div className="flex flex-col lg:flex-row gap-8">
 
-        {/* Story Header */}
-        <header className="mb-12">
-          <div className="flex justify-between items-start mb-4">
-            <h1 className="text-4xl font-bold text-slate-100 leading-tight">
-              {selectedStory.title}
-            </h1>
-          </div>
-          <p className="text-xl text-slate-400 mb-8">{selectedStory.teaser}</p>
-          <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-800">
-              <Image 
-                src={selectedStory.image}
-                alt={selectedStory.name}
-                fill
-                className="object-cover object-[50%_35%]"
-              />
-          </div>
-        </header>
-
-        <div className="prose prose-invert max-w-3xl">
-          {/* Your story content loop */}
-          {selectedStory.content.map((section, index) => {
-            if (section.type === 'text') {
-              return (
-                <p key={index} className="text-lg text-slate-300 leading-relaxed mb-6">
-                  {section.text}
-                </p>
-              );
-            }
-            if (section.type === 'quote') {
-              return (
-                <blockquote key={index} className="border-l-4 border-blue-600 pl-6 my-6 italic text-xl text-slate-300">
-                  {section.text}
-                  <cite className="not-italic block mt-4 text-base text-slate-500">
-                    — {selectedStory.name}
-                  </cite>
-                </blockquote>
-              );
-            }
-            if (section.type === 'lifestyle' && section.items) {
-              return (
-                <div key={index} className="my-12">
-                  <h3 className="text-2xl font-bold text-blue-400 mb-4">{section.title}</h3>
-                  <ul className="list-disc list-inside space-y-2 text-slate-300">
-                    {section.items.map((item, idx) => (
-                      <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-                    ))}
-                  </ul>
+              {/* Desktop Milestones Sidebar */}
+              <div ref={milestonesRef} className="hidden lg:block lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] lg:w-[280px] lg:shrink-0 overflow-y-auto pr-2 scrollbar-hide">
+              <h2 className="text-2xl font-bold text-blue-400 mb-6">Key Milestones</h2>
+                <div className="relative pl-8 before:absolute before:left-0 before:top-0 before:h-full before:w-px before:bg-blue-600/30">
+                  <div className="progress-line absolute left-0 top-0 w-px bg-blue-400 transition-all duration-500" style={{ height: '0%' }} />
+                  {selectedStory.milestones.map((milestone, index) => (
+                    <div key={index} className="relative pl-8 mb-8 last:mb-0">
+                      <div className={`absolute left-0 top-2 -translate-x-1/2 w-6 h-6 rounded-full flex items-center justify-center text-white font-bold text-sm z-10 transition-colors ${
+                        index <= activeMilestone ? 'bg-blue-400' : 'bg-blue-600/50'
+                      }`}>
+                        {index + 1}
+                      </div>
+                      <div className="pb-6">
+                        <h4 className="text-lg font-semibold text-slate-100 mb-2">
+                          <span className="text-blue-400">{milestone.year}</span>: {milestone.title}
+                        </h4>
+                        <p className="text-slate-400 leading-relaxed text-sm">{milestone.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              );
-            }
-            return null;
-          })}
+              </div>
+
+              {/* Story Content */}
+              <article className="flex-1" ref={contentRef}>
+
+                {/* Mobile Milestones */}
+                <div className="flex overflow-x-auto gap-4 mb-8 lg:hidden scrollbar-hide">
+                  {selectedStory.milestones.map((milestone, index) => (
+                    <div key={index} className="min-w-[180px] bg-slate-800 p-3 rounded-lg flex-shrink-0">
+                      <h4 className="text-blue-400 font-semibold">{milestone.year}</h4>
+                      <p className="text-slate-300 text-sm">{milestone.title}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Story Header */}
+                <header className="mb-12">
+                  <div className="flex justify-between items-start mb-4">
+                    <h1 className="text-4xl font-bold text-slate-100 leading-tight">
+                      {selectedStory.title}
+                    </h1>
+                  </div>
+                  <p className="text-xl text-slate-400 mb-8">{selectedStory.teaser}</p>
+                  <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-800">
+                      <Image 
+                        src={selectedStory.image}
+                        alt={selectedStory.name}
+                        fill
+                        className="object-cover object-[50%_35%]"
+                      />
+                  </div>
+                </header>
+
+                <div className="prose prose-invert max-w-3xl">
+                  {/* Your story content loop */}
+                  {selectedStory.content.map((section, index) => {
+                    if (section.type === 'text') {
+                      return (
+                        <p key={index} className="text-lg text-slate-300 leading-relaxed mb-6">
+                          {section.text}
+                        </p>
+                      );
+                    }
+                    if (section.type === 'quote') {
+                      return (
+                        <blockquote key={index} className="border-l-4 border-blue-600 pl-6 my-6 italic text-xl text-slate-300">
+                          {section.text}
+                          <cite className="not-italic block mt-4 text-base text-slate-500">
+                            — {selectedStory.name}
+                          </cite>
+                        </blockquote>
+                      );
+                    }
+                    if (section.type === 'lifestyle' && section.items) {
+                      return (
+                        <div key={index} className="my-12">
+                          <h3 className="text-2xl font-bold text-blue-400 mb-4">{section.title}</h3>
+                          <ul className="list-disc list-inside space-y-2 text-slate-300">
+                            {section.items.map((item, idx) => (
+                              <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    }
+                    return null;
+                  })}
+                </div>
+              </article>
+            </div>
+
+            {/* Story Navigation */}
+            <div className="space-y-12 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] lg:overflow-y-auto px-3 scrollbar-hide">
+          
+            {/* Today's Featured */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-slate-300 px-2">Today&apos;s Story</h3>
+              <StoryCard 
+                story={stories[0]} 
+                onClick={() => handleSelectStory(stories[0])}
+                isActive={selectedStory.id === stories[0].id}
+              />
+            </div>
+
+            {/* Previous Stories */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-slate-300 px-2">Previous Stories</h3>
+              {stories.slice(1).map(story => (
+                <StoryCard 
+                  key={story.id} 
+                  story={story} 
+                  onClick={() => handleSelectStory(story)}  
+                  isActive={selectedStory.id === story.id}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-      </article>
+      </main>
     </div>
-
-    {/* Story Navigation */}
-    <div className="space-y-12 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] lg:overflow-y-auto px-3 scrollbar-hide">
-  
-  {/* Today's Featured */}
-  <div className="space-y-4">
-    <h3 className="text-lg font-semibold text-slate-300 px-2">Today&apos;s Story</h3>
-    <StoryCard 
-      story={stories[0]} 
-      onClick={() => handleSelectStory(stories[0])}
-      isActive={selectedStory.id === stories[0].id}
-    />
   </div>
-
-  {/* Previous Stories */}
-  <div className="space-y-4">
-    <h3 className="text-lg font-semibold text-slate-300 px-2">Previous Stories</h3>
-    {stories.slice(1).map(story => (
-      <StoryCard 
-        key={story.id} 
-        story={story} 
-        onClick={() => handleSelectStory(story)}  
-        isActive={selectedStory.id === story.id}
-      />
-    ))}
-  </div>
-
-</div>
-
-  </div>
-</main>
-
-    </div>
   );
 }
 
@@ -448,6 +458,114 @@ function StoryCard({ story, onClick, isActive }: {
             {story.teaser}
           </p>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[0]) => void }) {
+  return (
+    <div className="px-4 py-6 space-y-8">
+      {/* Today's Story */}
+      <div>
+        <h2 className="text-xl font-bold text-slate-200 mb-4">Today's Story</h2>
+        <StoryCard 
+          story={stories[0]} 
+          onClick={() => onSelectStory(stories[0])}
+          isActive={false}
+        />
+      </div>
+
+      {/* Previous Stories */}
+      <div>
+        <h2 className="text-xl font-bold text-slate-200 mb-4">Previous Stories</h2>
+        <div className="space-y-4">
+          {stories.slice(1).map(story => (
+            <StoryCard 
+              key={story.id} 
+              story={story} 
+              onClick={() => onSelectStory(story)}
+              isActive={false}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StoryDetail({ story, onBack }: { 
+  story: typeof stories[0]; 
+  onBack: () => void; 
+}) {
+  return (
+    <div className="px-4 py-6">
+      {/* Back Button */}
+      <button
+        onClick={onBack}
+        className="text-sm text-slate-500 hover:text-slate-400 transition-colors mb-6"
+      >
+        ← Back to Stories
+      </button>
+
+
+      {/* Mobile Milestones */}
+      <div className="flex overflow-x-auto gap-4 mb-8 scrollbar-hide">
+        {story.milestones.map((milestone, index) => (
+          <div key={index} className="min-w-[180px] bg-slate-800 p-3 rounded-lg flex-shrink-0">
+            <h4 className="text-blue-400 font-semibold">{milestone.year}</h4>
+            <p className="text-slate-300 text-sm">{milestone.title}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Story Header */}
+      <h1 className="text-3xl font-bold text-slate-100 mb-4">{story.title}</h1>
+      <p className="text-slate-400 mb-6">{story.teaser}</p>
+
+      <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-800 mb-8">
+        <Image 
+          src={story.image}
+          alt={story.name}
+          fill
+          className="object-cover object-[50%_35%]"
+        />
+      </div>
+
+      {/* Story Content */}
+      <div className="prose prose-invert max-w-3xl">
+        {story.content.map((section, index) => {
+          if (section.type === 'text') {
+            return (
+              <p key={index} className="text-lg text-slate-300 leading-relaxed mb-6">
+                {section.text}
+              </p>
+            );
+          }
+          if (section.type === 'quote') {
+            return (
+              <blockquote key={index} className="border-l-4 border-blue-600 pl-6 my-6 italic text-xl text-slate-300">
+                {section.text}
+                <cite className="not-italic block mt-4 text-base text-slate-500">
+                  — {story.name}
+                </cite>
+              </blockquote>
+            );
+          }
+          if (section.type === 'lifestyle' && section.items) {
+            return (
+              <div key={index} className="my-12">
+                <h3 className="text-2xl font-bold text-blue-400 mb-4">{section.title}</h3>
+                <ul className="list-disc list-inside space-y-2 text-slate-300">
+                  {section.items.map((item, idx) => (
+                    <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+                  ))}
+                </ul>
+              </div>
+            );
+          }
+          return null;
+        })}
       </div>
     </div>
   );
