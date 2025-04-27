@@ -1,9 +1,8 @@
 import { stories } from '@/data/stories';
 import Link from 'next/link';
 
-export default function StoryPage(
-  { params }: { params: { slug: string } }   // ← inline type
-) {
+
+export default function StoryPage({ params }: any) { 
   const story = stories.find(story => story.id === Number(params.slug));
 
   if (!story) {
