@@ -13,9 +13,9 @@ import Image from 'next/image';
 
 export default function Home() {
   // ================= STATE MANAGEMENT =================
-  const [selectedStory, setSelectedStory] = useState<typeof stories[0] | null>(null); // Currently selected story (both desktop & mobile)
+  const [selectedStory, setSelectedStory] = useState<typeof stories[number] | null>(null);
   const [activeMilestone, setActiveMilestone] = useState(0); // Tracks which milestone is active on scroll
-  const [viewingStory, setViewingStory] = useState<typeof stories[0] | null>(null); // Mobile: are we viewing a story or the list? 
+  const [viewingStory, setViewingStory] = useState<typeof stories[number] | null>(null); // Mobile: are we viewing a story or the list? 
   // Refs for tracking content & milestones sidebar
   const contentRef = useRef<HTMLDivElement>(null);
   const milestonesRef = useRef<HTMLDivElement>(null);
@@ -31,14 +31,14 @@ export default function Home() {
     localStorage.setItem('isViewingStory', 'false');
   };
     // Desktop: Select a story & reset scroll
-    const handleSelectStory = (story: typeof stories[0]) => {
+    const handleSelectStory = (story: typeof stories[number]) => {
       setSelectedStory(story);
       localStorage.setItem('selectedStoryId', story.id.toString());
       window.scrollTo(0, 0);
     };
   
     // Mobile: Select a story & save viewing state
-    const handleMobileSelectStory = (story: typeof stories[0]) => {
+    const handleMobileSelectStory = (story: typeof stories[number]) => {
       setViewingStory(story);
       localStorage.setItem('selectedStoryId', story.id.toString());  // Reuse same key
       localStorage.setItem('isViewingStory', 'true');                // Track mobile view
@@ -63,7 +63,7 @@ export default function Home() {
       }
     }
     // Default to today's story if nothing saved
-    setSelectedStory(stories[0]);
+    setSelectedStory(stories[stories.length - 1]);
   }, []);
 
   // Track scroll position to update active milestone (desktop)
@@ -317,16 +317,16 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-slate-300 px-2">Today&apos;s Story</h3>
               <StoryCard 
-                story={stories[0]} 
-                onClick={() => handleSelectStory(stories[0])}
-                isActive={selectedStory.id === stories[0].id}
+                story={stories[stories.length - 1]} 
+                onClick={() => handleSelectStory(stories[stories.length - 1])}
+                isActive={selectedStory.id === stories[stories.length - 1].id}
               />
             </div>
 
             {/* Previous Stories */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-slate-300 px-2">Previous Stories</h3>
-              {stories.slice(1).map(story => (
+              {stories.slice(0, -1).reverse().map(story => (
                 <StoryCard 
                   key={story.id} 
                   story={story} 
@@ -368,7 +368,7 @@ const LIKE_OFFSETS: Record<number, number> = {
 
 // StoryCard: Displays a summary card for each story with like functionality
 function StoryCard({ story, onClick, isActive }: { 
-  story: typeof stories[0];
+  story: typeof stories[number];
   onClick: () => void;
   isActive: boolean;
 }) {
@@ -493,15 +493,15 @@ function StoryCard({ story, onClick, isActive }: {
 }
 
 // StoryList: Displays list of stories (mobile)
-function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[0]) => void }) {
+function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[number]) => void }) {
   return (
     <div className="px-4 py-6 space-y-8">
       {/* Today's Story */}
       <div>
         <h2 className="text-xl font-bold text-slate-200 mb-4">Today&apos;s Story</h2>
         <StoryCard 
-          story={stories[0]} 
-          onClick={() => onSelectStory(stories[0])}
+          story={stories[stories.length - 1]} 
+          onClick={() => onSelectStory(stories[stories.length - 1])}
           isActive={false}
         />
       </div>
@@ -510,7 +510,7 @@ function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[0]
       <div>
         <h2 className="text-xl font-bold text-slate-200 mb-4">Previous Stories</h2>
         <div className="space-y-4">
-          {stories.slice(1).map(story => (
+          {stories.slice(0, -1).reverse().map(story => (
             <StoryCard 
               key={story.id} 
               story={story} 
@@ -526,7 +526,7 @@ function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[0]
 
 // StoryDetail: Displays full story content (mobile)
 function StoryDetail({ story, onBack }: { 
-  story: typeof stories[0]; 
+  story: typeof stories[number]; 
   onBack: () => void; 
 }) {
   return (
