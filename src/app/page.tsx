@@ -12,39 +12,61 @@ import Image from 'next/image';
 
 
 export default function Home() {
-  const [selectedStory, setSelectedStory] = useState<typeof stories[0] | null>(null);
-  const [activeMilestone, setActiveMilestone] = useState(0); 
-  const [viewingStory, setViewingStory] = useState<typeof stories[0] | null>(null); 
+  // ================= STATE MANAGEMENT =================
+  const [selectedStory, setSelectedStory] = useState<typeof stories[0] | null>(null); // Currently selected story (both desktop & mobile)
+  const [activeMilestone, setActiveMilestone] = useState(0); // Tracks which milestone is active on scroll
+  const [viewingStory, setViewingStory] = useState<typeof stories[0] | null>(null); // Mobile: are we viewing a story or the list? 
+  // Refs for tracking content & milestones sidebar
   const contentRef = useRef<HTMLDivElement>(null);
   const milestonesRef = useRef<HTMLDivElement>(null);
+
   const user = useUser();
-
-
   const router = useRouter();
+
+  // ================= HANDLERS =================
+
+  // Mobile: Handle 'Back to Stories' button
+  const handleBack = () => {
+    setViewingStory(null);
+    localStorage.setItem('isViewingStory', 'false');
+  };
+    // Desktop: Select a story & reset scroll
+    const handleSelectStory = (story: typeof stories[0]) => {
+      setSelectedStory(story);
+      localStorage.setItem('selectedStoryId', story.id.toString());
+      window.scrollTo(0, 0);
+    };
   
-  // Inside your component
+    // Mobile: Select a story & save viewing state
+    const handleMobileSelectStory = (story: typeof stories[0]) => {
+      setViewingStory(story);
+      localStorage.setItem('selectedStoryId', story.id.toString());  // Reuse same key
+      localStorage.setItem('isViewingStory', 'true');                // Track mobile view
+      window.scrollTo(0, 0);  // Optional
+    };
+  
+  // ================= EFFECTS =================
+
+  // On mount: Restore last viewed story + mobile view state from localStorage
   useEffect(() => {
     const savedStoryId = localStorage.getItem('selectedStoryId');
+    const isViewing = localStorage.getItem('isViewingStory') === 'true';
+  
     if (savedStoryId) {
       const story = stories.find(s => s.id === Number(savedStoryId));
       if (story) {
         setSelectedStory(story);
+        if (isViewing) {
+          setViewingStory(story);  // Only applies on mobile
+        }
         return;
       }
     }
-    // If nothing saved, fallback to Today's Story
+    // Default to today's story if nothing saved
     setSelectedStory(stories[0]);
   }, []);
-  
 
-  const handleSelectStory = (story: typeof stories[0]) => {
-    setSelectedStory(story);
-    localStorage.setItem('selectedStoryId', story.id.toString());
-    window.scrollTo(0, 0);
-  };
-  
-
-  // Scroll milestone tracker
+  // Track scroll position to update active milestone (desktop)
   useEffect(() => {
     const handleScroll = () => {
       if (!selectedStory) return;
@@ -61,6 +83,7 @@ export default function Home() {
 
       let active = milestonePositions.findIndex(pos => scrollPosition < pos) - 1;
 
+      // If scrolled to bottom, mark last milestone as active
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
         active = milestones.length - 1;
       }
@@ -72,7 +95,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [selectedStory]);
 
-  // Progress line animation
+  // Animate progress line in milestones sidebar
   useEffect(() => {
     if (!selectedStory) return;
     if (!milestonesRef.current) return;
@@ -84,7 +107,10 @@ export default function Home() {
     }
   }, [activeMilestone, selectedStory]);
 
+  // ================= RENDER =================
+
   if (!selectedStory) {
+    // Simple loading state while story initializes
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-slate-900 text-slate-400">
         <svg
@@ -116,7 +142,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-900">
-      {/* Navbar */}
+      {/* Navbar with logo, suggest button, and user avatar */}
       <nav className="bg-slate-800/90 backdrop-blur-md border-b border-slate-700 px-6 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-blue-400">
@@ -176,17 +202,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/*Mobile*/}
+      {/* Mobile View: Show either story list or story detail */}
       <div className="lg:hidden">
         {viewingStory ? (
-          <StoryDetail story={viewingStory} onBack={() => setViewingStory(null)} />
-        ) : (
-          <StoryList onSelectStory={(story) => setViewingStory(story)} />
+            <StoryDetail story={viewingStory} onBack={handleBack} />
+          ) : (
+            <StoryList onSelectStory={handleMobileSelectStory} />
         )}
       </div>
 
 
-      {/* Main Content */}
+      {/* Desktop View: Main story content + milestones + navigation */}
       <div className="hidden lg:block">
         <main className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
@@ -317,6 +343,9 @@ export default function Home() {
   );
 }
 
+// ================= UTILS =================
+
+// Format like counts (e.g., 1.2k, 3m)
 function formatLikes(count: number, storyId: number): string {
   const offset = LIKE_OFFSETS[storyId] || 0;
   const totalLikes = count + offset;
@@ -337,7 +366,7 @@ const LIKE_OFFSETS: Record<number, number> = {
   3: 200,  // etc.
 };
 
-
+// StoryCard: Displays a summary card for each story with like functionality
 function StoryCard({ story, onClick, isActive }: { 
   story: typeof stories[0];
   onClick: () => void;
@@ -463,6 +492,7 @@ function StoryCard({ story, onClick, isActive }: {
   );
 }
 
+// StoryList: Displays list of stories (mobile)
 function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[0]) => void }) {
   return (
     <div className="px-4 py-6 space-y-8">
@@ -494,6 +524,7 @@ function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[0]
   );
 }
 
+// StoryDetail: Displays full story content (mobile)
 function StoryDetail({ story, onBack }: { 
   story: typeof stories[0]; 
   onBack: () => void; 
