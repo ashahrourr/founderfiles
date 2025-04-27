@@ -16,7 +16,6 @@ export default function Home() {
   const [activeMilestone, setActiveMilestone] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const milestonesRef = useRef<HTMLDivElement>(null);
-  const supabaseClient = useSupabaseClient();
   const user = useUser();
 
 
@@ -224,7 +223,7 @@ export default function Home() {
   
   {/* Today's Featured */}
   <div className="space-y-4">
-    <h3 className="text-lg font-semibold text-slate-300 px-2">Today's Featured</h3>
+    <h3 className="text-lg font-semibold text-slate-300 px-2">Today&apos;s Story</h3>
     <StoryCard 
       story={stories[0]} 
       onClick={() => {
