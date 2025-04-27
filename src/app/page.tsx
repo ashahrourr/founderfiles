@@ -13,8 +13,6 @@ import Image from 'next/image';
 
 export default function Home() {
   const [selectedStory, setSelectedStory] = useState(stories[0]);
-  const [likes, setLikes] = useState<number>(0);
-  const [liked, setLiked] = useState(false);
   const [activeMilestone, setActiveMilestone] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const milestonesRef = useRef<HTMLDivElement>(null);
@@ -23,78 +21,6 @@ export default function Home() {
 
 
   const router = useRouter();
-
-  // Fetch likes and user's like status
-  useEffect(() => {
-    const fetchLikes = async () => {
-      try {
-        // Get total likes count for the story
-        const { count } = await supabaseClient
-          .from('story_likes')
-          .select('*', { count: 'exact', head: true })
-          .eq('story_id', selectedStory.id);
-
-        setLikes(count || 0);
-
-        // Check if user has liked the story
-        if (user) {
-          const { data } = await supabaseClient
-            .from('story_likes')
-            .select('id')
-            .eq('story_id', selectedStory.id)
-            .eq('user_id', user.id)
-            .maybeSingle();
-
-          setLiked(!!data);
-        }
-      } catch (error) {
-        console.error('Error fetching likes:', error);
-      }
-    };
-
-    fetchLikes();
-  }, [selectedStory.id, user, supabaseClient]);
-
-  // Realtime listener for likes changes
-  useEffect(() => {
-    const channel = supabaseClient
-      .channel('likes-realtime')
-      .on(
-        'postgres_changes',
-        {
-          event: '*',
-          schema: 'public',
-          table: 'likes',
-          filter: `story_id=eq.${selectedStory.id}`
-        },
-        async () => {
-          // Refresh likes count when any change occurs
-          const { count } = await supabaseClient
-            .from('story_likes')
-            .select('*', { count: 'exact', head: true })
-            .eq('story_id', selectedStory.id);
-
-          setLikes(count || 0);
-          
-          // Refresh user's like status if logged in
-          if (user) {
-            const { data } = await supabaseClient
-              .from('story_likes')
-              .select('id')
-              .eq('story_id', selectedStory.id)
-              .eq('user_id', user.id)
-              .maybeSingle();
-
-            setLiked(!!data);
-          }
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabaseClient.removeChannel(channel);
-    };
-  }, [selectedStory.id, user, supabaseClient]);
   
 
   // Scroll milestone tracker
@@ -179,7 +105,8 @@ export default function Home() {
                   ${user ? 'border-2 border-green-500' : 'border-2 border-red-500'}
                   transition-all hover:scale-105 bg-slate-800/50 shadow-sm`}
                 >
-                  {user ? (
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  {user ? (         
                     <img 
                       src={`https://api.dicebear.com/9.x/big-smile/svg`} 
                       alt="User Avatar"
@@ -302,7 +229,6 @@ export default function Home() {
       story={stories[0]} 
       onClick={() => {
         setSelectedStory(stories[0]);
-        setLiked(false);
       }}
       isActive={selectedStory.id === stories[0].id}
     />
@@ -317,7 +243,6 @@ export default function Home() {
         story={story} 
         onClick={() => {
           setSelectedStory(story);
-          setLiked(false);
         }}
         isActive={selectedStory.id === story.id}
       />

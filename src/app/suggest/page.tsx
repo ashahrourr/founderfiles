@@ -51,7 +51,7 @@ const SuccessMessage = ({ onReset }: { onReset: () => void }) => (
         Submission Received!
       </div>
       <p className="text-slate-400 mb-6">
-        We'll review your suggestion and get back to you soon
+        We&apos;ll review your suggestion and get back to you soon
       </p>
     </div>
     <button
