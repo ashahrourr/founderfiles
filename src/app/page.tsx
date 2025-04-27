@@ -364,9 +364,17 @@ function formatLikes(count: number, storyId: number): string {
 
 
 const LIKE_OFFSETS: Record<number, number> = {
-  1: 100,  // Story ID 1 gets +150 likes
-  2: 120,  // Story ID 2 gets +120 likes
-  3: 200,  // etc.
+  1: 1275,  // Story ID 1 gets +150 likes
+  2: 1182,  // Story ID 2 gets +120 likes
+  3: 2314,  // etc.
+  4: 1492,
+  5: 1542,
+  6: 2781,
+  7: 1628,
+  8: 3281,
+  9: 1826,
+  10: 3197,
+
 };
 
 // StoryCard: Displays a summary card for each story with like functionality
@@ -455,14 +463,14 @@ function StoryCard({ story, onClick, isActive }: {
   />
 
         </div>
-        <div className="flex-1 space-y-1 relative pr-8">
+        <div className="flex-1 space-y-1 relative pr-12">
           {/* Updated Like Button Position */}
           <button 
             onClick={handleLike} 
             className="absolute top-0 right-0 flex items-center gap-1"
           >
             <svg
-              className={`w-5 h-5 ${
+              className={`w-4 h-4 ${
                 liked 
                   ? 'text-red-500 fill-current' 
                   : 'text-slate-400 fill-transparent hover:text-red-400'
