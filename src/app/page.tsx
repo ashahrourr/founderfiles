@@ -28,30 +28,32 @@ export default function Home() {
   // Mobile: Handle 'Back to Stories' button
   const handleBack = () => {
     setViewingStory(null);
-    localStorage.setItem('isViewingStory', 'false');
+    sessionStorage.setItem('isViewingStory', 'false');   // Changed to sessionStorage
   };
-    // Desktop: Select a story & reset scroll
-    const handleSelectStory = (story: typeof stories[number]) => {
-      setSelectedStory(story);
-      localStorage.setItem('selectedStoryId', story.id.toString());
-      window.scrollTo(0, 0);
-    };
-  
-    // Mobile: Select a story & save viewing state
-    const handleMobileSelectStory = (story: typeof stories[number]) => {
-      setViewingStory(story);
-      localStorage.setItem('selectedStoryId', story.id.toString());  // Reuse same key
-      localStorage.setItem('isViewingStory', 'true');                // Track mobile view
-      window.scrollTo(0, 0);  // Optional
-    };
+
+  // Desktop: Select a story & reset scroll
+  const handleSelectStory = (story: typeof stories[number]) => {
+    setSelectedStory(story);
+    sessionStorage.setItem('selectedStoryId', story.id.toString());   // Changed here
+    window.scrollTo(0, 0);
+  };
+
+  // Mobile: Select a story & save viewing state
+  const handleMobileSelectStory = (story: typeof stories[number]) => {
+    setViewingStory(story);
+    sessionStorage.setItem('selectedStoryId', story.id.toString());   // Changed here
+    sessionStorage.setItem('isViewingStory', 'true');                 // Changed here
+    window.scrollTo(0, 0);
+  };
+
   
   // ================= EFFECTS =================
 
-  // On mount: Restore last viewed story + mobile view state from localStorage
+  // On mount: Restore last viewed story + mobile view state from sessionStorage
   useEffect(() => {
-    const savedStoryId = localStorage.getItem('selectedStoryId');
-    const isViewing = localStorage.getItem('isViewingStory') === 'true';
-  
+    const savedStoryId = sessionStorage.getItem('selectedStoryId');     // Changed here
+    const isViewing = sessionStorage.getItem('isViewingStory') === 'true';  // Changed here
+
     if (savedStoryId) {
       const story = stories.find(s => s.id === Number(savedStoryId));
       if (story) {
@@ -65,6 +67,7 @@ export default function Home() {
     // Default to today's story if nothing saved
     setSelectedStory(stories[stories.length - 1]);
   }, []);
+
 
   // Track scroll position to update active milestone (desktop)
   useEffect(() => {
