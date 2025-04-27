@@ -1,5 +1,6 @@
 import { stories } from '@/data/stories';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function StoryPage({ 
   params 
@@ -53,11 +54,12 @@ export default async function StoryPage({
             </h1>
             <p className="text-xl text-slate-400 mb-4">{story.teaser}</p>
             <div className="aspect-video rounded-2xl overflow-hidden bg-slate-800 shadow-2xl border border-slate-700">
-              <img 
-                src={story.image} 
-                alt={story.name} 
-                className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105" 
-              />
+            <Image 
+              src={story.image}
+              alt={story.name}
+              fill
+              className="object-cover"
+            />
             </div>
           </header>
 
