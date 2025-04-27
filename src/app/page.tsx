@@ -468,7 +468,7 @@ function StoryList({ onSelectStory }: { onSelectStory: (story: typeof stories[0]
     <div className="px-4 py-6 space-y-8">
       {/* Today's Story */}
       <div>
-        <h2 className="text-xl font-bold text-slate-200 mb-4">Today's Story</h2>
+        <h2 className="text-xl font-bold text-slate-200 mb-4">Today&apos;s Story</h2>
         <StoryCard 
           story={stories[0]} 
           onClick={() => onSelectStory(stories[0])}
