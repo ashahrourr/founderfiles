@@ -1,9 +1,10 @@
-type StorySection = 
+// data/stories.ts
+export type StorySection =
   | { type: 'text'; text: string }
   | { type: 'quote'; text: string }
   | { type: 'lifestyle'; title: string; items: string[] };
 
-type Story = {
+export type Story = {
   id: number;
   name: string;
   image: string;
