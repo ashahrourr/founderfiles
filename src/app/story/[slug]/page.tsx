@@ -75,7 +75,7 @@ export default function StoryPage({ params }: Params) {
                   className="border-l-4 border-blue-600 pl-6 my-12 bg-slate-800/50 p-6 rounded-xl backdrop-blur-sm"
                 >
                   <p className="text-2xl font-light text-slate-200 italic mb-4">
-                    "{block.text}"
+                    {block.text}
                   </p>
                   <cite className="not-italic font-medium text-slate-400 flex items-center gap-2">
                     <span className="w-8 h-px bg-slate-500" />

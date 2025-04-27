@@ -104,7 +104,6 @@ export default function Home() {
                   ${user ? 'border-2 border-green-500' : 'border-2 border-red-500'}
                   transition-all hover:scale-105 bg-slate-800/50 shadow-sm`}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   {user ? (         
                     <img 
                       src={`https://api.dicebear.com/9.x/big-smile/svg`} 
