@@ -247,7 +247,7 @@ export default function Home() {
             </div>
             <div className="space-y-12 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] lg:overflow-y-auto px-3 scrollbar-hide">
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-slate-300 px-2">Today's Story</h3>
+                <h3 className="text-lg font-semibold text-slate-300 px-2">Today&apos;s Story</h3>
                 <StoryCard
                   story={stories[stories.length - 1]}
                   onClick={() => handleSelectStory(stories[stories.length - 1])}
