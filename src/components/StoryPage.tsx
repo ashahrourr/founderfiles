@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { stories } from '@/data/stories';
 import { useRouter } from 'next/navigation';
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import Image from 'next/image';
 import StoryCard from '@/components/StoryCard';
 import StoryList from '@/components/StoryList';
