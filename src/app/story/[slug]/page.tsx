@@ -1,8 +1,16 @@
 import { stories } from '@/data/stories';
 import Link from 'next/link';
 
+type Params = {
+  slug: string;
+}
 
-export default function StoryPage({ params }: any) { 
+type Props = {
+  params: Params;
+  searchParams: Record<string, string | string[] | undefined>;
+}
+
+export default function StoryPage({ params }: Props) { 
   const story = stories.find(story => story.id === Number(params.slug));
 
   if (!story) {
