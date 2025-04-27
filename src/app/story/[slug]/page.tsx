@@ -1,12 +1,13 @@
 import { stories } from '@/data/stories';
 import Link from 'next/link';
 
-export default function StoryPage({ 
+export default async function StoryPage({ 
   params 
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) { 
-  const story = stories.find(story => story.id === Number(params.slug));
+  const { slug } = await params; // Await the params Promise
+  const story = stories.find(story => story.id === Number(slug));
 
   if (!story) {
     return (
