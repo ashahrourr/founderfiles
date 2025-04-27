@@ -94,7 +94,7 @@ export default function Home() {
     return () => {
       supabaseClient.removeChannel(channel);
     };
-  }, [selectedStory.id, user]);
+  }, [selectedStory.id, user, supabaseClient]);
   
 
   // Scroll milestone tracker
@@ -388,7 +388,7 @@ function StoryCard({ story, onClick, isActive }: {
     };
 
     fetchLikes();
-  }, [story.id, user]);
+  }, [story.id, user, supabaseClient]);
 
   const handleLike = async (e: React.MouseEvent) => {
     e.stopPropagation();

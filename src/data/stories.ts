@@ -43,7 +43,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"It wasn’t meant to be a company. I just wanted a place to talk about cool stuff with my friends."`
+        text: `It wasn’t meant to be a company. I just wanted a place to talk about cool stuff with my friends.`
       },
       {
         type: 'text',
@@ -110,7 +110,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"I wasn’t trying to build a company. I was solving my own problems — and sharing them online."`
+        text: `I wasn’t trying to build a company. I was solving my own problems — and sharing them online.`
       },
       {
         type: 'text',
@@ -177,7 +177,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"We weren’t experts. We were two college kids figuring it out as we went — faking a community until it became real."`
+        text: `We weren’t experts. We were two college kids figuring it out as we went — faking a community until it became real.`
       },
       {
         type: 'text',
@@ -252,7 +252,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"We weren’t trying to launch with fanfare. We just wanted developers to say — this is so much easier."`
+        text: `We weren’t trying to launch with fanfare. We just wanted developers to say — this is so much easier.`
       },
       {
         type: 'text',
@@ -317,7 +317,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"I didn’t care about being a ‘founder.’ I just wanted to work on interesting problems with smart people."`
+        text: `I didn’t care about being a ‘founder.’ I just wanted to work on interesting problems with smart people.`
       },
       {
         type: 'text',
@@ -380,7 +380,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"I always believed the web should be faster, simpler, and accessible to anyone who wants to build."`
+        text: `I always believed the web should be faster, simpler, and accessible to anyone who wants to build.`
       },
       {
         type: 'text',
@@ -440,7 +440,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"We weren’t chasing unicorns. We just wanted a profitable, sustainable business that gave us freedom."`
+        text: `We weren’t chasing unicorns. We just wanted a profitable, sustainable business that gave us freedom.`
       },
       {
         type: 'text',
@@ -507,7 +507,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"No-code wasn’t a hack — it was a movement. I wanted to show people they didn’t need permission or technical skills to build."`
+        text: `No-code wasn’t a hack — it was a movement. I wanted to show people they didn’t need permission or technical skills to build.`
       },
       {
         type: 'text',
@@ -565,7 +565,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"I wasn’t looking to build a unicorn. I wanted a product that solved a real problem and could fund a good life."`
+        text: `I wasn’t looking to build a unicorn. I wanted a product that solved a real problem and could fund a good life.`
       },
       {
         type: 'text',
@@ -624,7 +624,7 @@ export const stories: Story[] = [
       },
       {
         type: 'quote',
-        text: `"I wanted to prove you could make a good living online without playing the startup lottery."`
+        text: `I wanted to prove you could make a good living online without playing the startup lottery.`
       },
       {
         type: 'text',
