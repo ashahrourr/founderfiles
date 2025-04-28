@@ -23,7 +23,7 @@ export async function generateMetadata({ params: paramsPromise }: { params: Prom
       title: story.title,
       description: story.teaser,
       images: [story.image],
-      url: `https://yourdomain.com/story/${story.id}`,
+      url: `https://founderfiles.dev/story/${story.id}`,
     },
   };
 }
