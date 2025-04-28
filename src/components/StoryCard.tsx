@@ -111,6 +111,7 @@ export default function StoryCard({
           />
         </div>
         <div className="flex-1 space-y-1 relative pr-12">
+          {/* Like Button */}
           <button onClick={handleLike} className="absolute top-0 right-0 flex items-center gap-1">
             <svg
               className={`w-4 h-4 ${
@@ -128,6 +129,38 @@ export default function StoryCard({
             </svg>
             <span className="text-xs text-slate-400">{formatLikes(likes, story.id)}</span>
           </button>
+
+          {/* Share Button - Mobile Only */}
+          <div className="absolute top-6 right-0 block lg:hidden">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                if (navigator.share) {
+                  navigator.share({
+                    title: story.title,
+                    url: `${window.location.origin}/story/${story.id}`,
+                  });
+                } else {
+                  alert('Sharing is not supported on this device.');
+                }
+              }}
+            >
+              <svg
+                className="w-4 h-4 text-slate-400 hover:text-slate-200"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12V4m0 0l-4 4m4-4l4 4"
+                />
+              </svg>
+            </button>
+          </div>
+
           <h3 className={`font-medium ${isActive ? 'text-blue-400' : 'text-slate-300'}`}>
             {story.name}
           </h3>
