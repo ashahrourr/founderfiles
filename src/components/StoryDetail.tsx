@@ -15,7 +15,7 @@ export default function StoryDetail({ story, onBack }: { story: Story; onBack: (
 
   useEffect(() => {
     const fetchLikes = async () => {
-      const { count } = await supabaseClient
+      await supabaseClient
         .from('story_likes')
         .select('*', { count: 'exact', head: true })
         .eq('story_id', story.id);
