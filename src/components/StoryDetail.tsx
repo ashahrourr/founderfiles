@@ -4,14 +4,13 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/navigation';
-import { Story, StorySection } from '@/data/stories';
+import { Story } from '@/data/stories';
 
 export default function StoryDetail({ story, onBack }: { story: Story; onBack: () => void }) {
   const supabaseClient = useSupabaseClient();
   const user = useUser();
   const router = useRouter();
 
-  const [likes, setLikes] = useState<number>(0);
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
@@ -20,7 +19,6 @@ export default function StoryDetail({ story, onBack }: { story: Story; onBack: (
         .from('story_likes')
         .select('*', { count: 'exact', head: true })
         .eq('story_id', story.id);
-      setLikes(count || 0);
 
       if (user) {
         const { data } = await supabaseClient
@@ -49,7 +47,6 @@ export default function StoryDetail({ story, onBack }: { story: Story; onBack: (
         .eq('user_id', user.id);
       if (!error) {
         setLiked(false);
-        setLikes((prev) => prev - 1);
       }
     } else {
       const { error } = await supabaseClient
@@ -57,7 +54,6 @@ export default function StoryDetail({ story, onBack }: { story: Story; onBack: (
         .insert({ story_id: story.id, user_id: user.id });
       if (!error) {
         setLiked(true);
-        setLikes((prev) => prev + 1);
       }
     }
   };
