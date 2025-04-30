@@ -658,8 +658,71 @@ export const stories: Story[] = [
       { year: 2023, title: "Champion of Bootstrappers", description: "Continues to inspire and support indie founders worldwide" }
     ]
   },
+  {
+    id: 11,
+    name: "Ilya Zhitomirskiy",
+    image: "/images/ilya_zhitomirskiy.jpg",
+    title: "The Student Who Took on Facebook with a Dream of Decentralization",
+    teaser: "How Ilya Zhitomirskiy and his friends tried to revolutionize social media from their college apartment — before privacy was mainstream.",
+    content: [
+      {
+        type: 'text',
+        text: `Born in Moscow and raised in the U.S., Ilya Zhitomirskiy was a visionary long before tech giants cared about privacy. While studying at NYU in his early 20s, Ilya and three friends decided to take on an impossible mission — build a decentralized, open-source alternative to Facebook.` 
+      },
+      {
+        type: 'text',
+        text: `In 2010, at just 21 years old, they launched Diaspora from their cramped apartment. The idea? Give people control over their data when the world was blindly trusting social media platforms.` 
+      },
+      {
+        type: 'text',
+        text: `They didn’t have Silicon Valley connections or a polished business plan. Instead, they posted their idea on Kickstarter — hoping to raise $10,000. The internet rallied behind them. They raised over $200,000, making it one of the biggest crowdfunding successes at the time.` 
+      },
+      {
+        type: 'quote',
+        text: `"We were just four students who believed the web could be a better place — owned by everyone, not corporations."`
+      },
+      {
+        type: 'text',
+        text: `Tech legends like Mark Zuckerberg himself donated to their campaign, calling it a "cool idea." The media dubbed them the "Anti-Facebook." Suddenly, these college kids were thrust into the spotlight — praised as the future of ethical social networking.` 
+      },
+      {
+        type: 'text',
+        text: `But behind the scenes, the pressure was immense. Ilya, the idealist of the group, struggled with the weight of expectations, perfectionism, and the harsh realities of building a startup that challenged Big Tech.` 
+      },
+      {
+        type: 'text',
+        text: `Tragically, in 2011, at just 22 years old, Ilya passed away. His death shook the tech world and became a symbol of how brutal startup life can be when passion meets overwhelming pressure.` 
+      },
+      {
+        type: 'text',
+        text: `Yet, his legacy lives on. Diaspora* didn’t become the next Facebook, but it sparked a global conversation about data privacy, decentralization, and ethical tech — years before these became mainstream concerns.` 
+      },
+      {
+        type: 'text',
+        text: `Today, Diaspora* is still maintained by the open-source community, a testament to Ilya’s vision that technology should empower people, not exploit them.` 
+      },
+      {
+        type: 'lifestyle',
+        title: "Where is Diaspora Now?",
+        items: [
+          "One of the first decentralized social networks, still running as open-source",
+          "Inspired the wave of privacy-focused platforms like Mastodon",
+          "Ilya’s story is taught as a case study in ethical tech and founder wellness",
+          "Kickstarter success paved the way for crowdfunding in tech",
+          "A lasting symbol of building for values, not just valuation"
+        ]
+      }
+    ],
+    milestones: [
+      { year: 2010, title: "Launched Diaspora at 21", description: "Crowdfunded $200K to build a privacy-first social network" },
+      { year: 2011, title: "Global Media Attention", description: "Became the face of ethical tech and decentralization" },
+      { year: 2011, title: "Ilya's Passing at 22", description: "Sparked conversations on mental health in startups" },
+      { year: 2023, title: "Diaspora Lives On", description: "Maintained by developers worldwide, inspiring decentralized platforms" }
+    ]
+  },
+
   // {
-  //   id: 11,
+  //   id: 12,
   //   name: "Sahil Lavingia",
   //   image: "/images/sahil_lavingia.jpg",
   //   title: "The Designer Who Turned a Weekend Project Into a $100M Business — On His Terms",
@@ -722,7 +785,7 @@ export const stories: Story[] = [
   // },
 
   // {
-  //   id: 12,
+  //   id: 13,
   //   name: "Derrick Reimer",
   //   image: "/images/derrick_reimer.jpg",
   //   title: "Why Derrick Reimer Shut Down His Startup to Build the Right One",
@@ -777,69 +840,6 @@ export const stories: Story[] = [
   //     { year: 2016, title: "Drip Acquired", description: "Sold to Leadpages for a multi-million dollar exit" },
   //     { year: 2019, title: "Shut Down Level", description: "Returned VC funds after realizing misaligned vision" },
   //     { year: 2020, title: "Founded SavvyCal", description: "Bootstrapped to profitability within a year" }
-  //   ]
-  // },
-
-  // {
-  //   id: 13,
-  //   name: "Ilya Zhitomirskiy",
-  //   image: "/images/ilya_zhitomirskiy.jpg",
-  //   title: "The Student Who Took on Facebook with a Dream of Decentralization",
-  //   teaser: "How Ilya Zhitomirskiy and his friends tried to revolutionize social media from their college apartment — before privacy was mainstream.",
-  //   content: [
-  //     {
-  //       type: 'text',
-  //       text: `Born in Moscow and raised in the U.S., Ilya Zhitomirskiy was a visionary long before tech giants cared about privacy. While studying at NYU in his early 20s, Ilya and three friends decided to take on an impossible mission — build a decentralized, open-source alternative to Facebook.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `In 2010, at just 21 years old, they launched Diaspora from their cramped apartment. The idea? Give people control over their data when the world was blindly trusting social media platforms.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `They didn’t have Silicon Valley connections or a polished business plan. Instead, they posted their idea on Kickstarter — hoping to raise $10,000. The internet rallied behind them. They raised over $200,000, making it one of the biggest crowdfunding successes at the time.` 
-  //     },
-  //     {
-  //       type: 'quote',
-  //       text: `"We were just four students who believed the web could be a better place — owned by everyone, not corporations."`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Tech legends like Mark Zuckerberg himself donated to their campaign, calling it a "cool idea." The media dubbed them the "Anti-Facebook." Suddenly, these college kids were thrust into the spotlight — praised as the future of ethical social networking.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `But behind the scenes, the pressure was immense. Ilya, the idealist of the group, struggled with the weight of expectations, perfectionism, and the harsh realities of building a startup that challenged Big Tech.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Tragically, in 2011, at just 22 years old, Ilya passed away. His death shook the tech world and became a symbol of how brutal startup life can be when passion meets overwhelming pressure.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Yet, his legacy lives on. Diaspora* didn’t become the next Facebook, but it sparked a global conversation about data privacy, decentralization, and ethical tech — years before these became mainstream concerns.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Today, Diaspora* is still maintained by the open-source community, a testament to Ilya’s vision that technology should empower people, not exploit them.` 
-  //     },
-  //     {
-  //       type: 'lifestyle',
-  //       title: "Where is Diaspora* Now?",
-  //       items: [
-  //         "One of the first decentralized social networks, still running as open-source",
-  //         "Inspired the wave of privacy-focused platforms like Mastodon",
-  //         "Ilya’s story is taught as a case study in ethical tech and founder wellness",
-  //         "Kickstarter success paved the way for crowdfunding in tech",
-  //         "A lasting symbol of building for values, not just valuation"
-  //       ]
-  //     }
-  //   ],
-  //   milestones: [
-  //     { year: 2010, title: "Launched Diaspora at 21", description: "Crowdfunded $200K to build a privacy-first social network" },
-  //     { year: 2011, title: "Global Media Attention", description: "Became the face of ethical tech and decentralization" },
-  //     { year: 2011, title: "Ilya's Passing at 22", description: "Sparked conversations on mental health in startups" },
-  //     { year: 2023, title: "Diaspora Lives On", description: "Maintained by developers worldwide, inspiring decentralized platforms" }
   //   ]
   // },
 
@@ -1029,6 +1029,245 @@ export const stories: Story[] = [
   //     { year: 2022, title: "Launched Hampton", description: "Created an exclusive community for entrepreneurs" }
   //   ]
   // },
+  // {
+  //   id: 17,
+  //   name: "David Karp",
+  //   image: "/images/david_karp.jpg",
+  //   title: "The Teen Dropout Who Created Tumblr and Cashed Out Big",
+  //   teaser: "How David Karp dropped out of school at 15, built Tumblr from his bedroom, and sold it for $1.1 billion before turning 30.",
+  //   content: [
+  //     {
+  //       type: 'text',
+  //       text: `David Karp grew up in Manhattan, New York, surrounded by creativity but disconnected from traditional education. At just 15, frustrated with school, he convinced his mother to let him drop out and focus entirely on his passion — coding. While most teenagers were in classrooms, David was freelancing for tech companies and sharpening his design skills.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `By 20, working out of his bedroom, David launched Tumblr — a simple, elegant platform that allowed users to quickly share text, images, quotes, and GIFs. It wasn’t designed to compete with giants like Facebook. It was built for creatives who wanted freedom without the rigid formats of traditional blogs.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `David didn’t rely on ads or flashy marketing campaigns. Instead, he tapped into design communities, early tech adopters, and word-of-mouth virality. Tumblr’s minimalist aesthetic and ease of use made it a favorite among artists, writers, and teens looking for self-expression. Influencers before the term existed began flocking to Tumblr, driving organic growth.` 
+  //     },
+  //     {
+  //       type: 'quote',
+  //       text: `"I wanted something simple — a place to post whatever you’re thinking without overthinking it."`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Tech blogs like TechCrunch and Mashable picked up on Tumblr’s unique vibe, giving it free publicity. But what really fueled its rise was the community itself — users sharing their Tumblr pages across forums, MySpace, and later Twitter.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `By 2012, Tumblr had become a cultural icon with over 100 million blogs. It was where internet trends were born. At just 26, David sold Tumblr to Yahoo for 1.1 billion dollars, becoming one of the youngest founders to close a billion-dollar deal.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Despite his newfound wealth, David stayed true to his low-profile lifestyle. He lived in a modest Williamsburg apartment, rode a Vespa, and avoided the typical tech billionaire spotlight. He stayed on as CEO, trying to preserve Tumblr’s identity within a corporate giant.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `In 2017, disillusioned with Yahoo's direction, David stepped down. He walked away from the tech world’s chaos, choosing instead to focus on design, architecture, and causes he cared about.`
+  //     },
+  //     {
+  //       type: 'lifestyle',
+  //       title: "Where is David Karp Now?",
+  //       items: [
+  //         "Lives quietly in New York, away from media attention",
+  //         "Pursues interests in architecture, design, and creative projects",
+  //         "Still rides his Vespa around Brooklyn",
+  //         "Supports digital freedom initiatives and artistic communities",
+  //         "Known for minimalist living despite his $200M+ net worth after the Tumblr sale"
+  //       ]
+  //     }
+  //   ],
+  //   milestones: [
+  //     { year: 2002, title: "Dropped Out at 15", description: "Left high school to pursue tech consulting and coding" },
+  //     { year: 2007, title: "Launched Tumblr at 20", description: "Built a microblogging platform that spread through design communities" },
+  //     { year: 2013, title: "Sold Tumblr for $1.1B", description: "Yahoo acquired Tumblr, making David one of the youngest tech millionaires" },
+  //     { year: 2017, title: "Left Tumblr", description: "Stepped down as CEO to focus on personal creative passions" }
+  //   ]
+  // },
+  // {
+  //   id: 18,
+  //   name: "Garrett Camp",
+  //   image: "/images/garrett_camp.jpg",
+  //   title: "The Uber Co-Founder Who Turned Rides Into Billions and Flew Into Luxury",
+  //   teaser: "How Garrett Camp quietly co-founded Uber, became a billionaire, and built a life filled with private jets, mansions, and moonshot projects.",
+  //   content: [
+  //     {
+  //       type: 'text',
+  //       text: `Garrett Camp grew up in Calgary, Canada, far from Silicon Valley. A curious mind from a young age, he studied electrical engineering at the University of Calgary before earning his Master’s in software engineering.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Before Uber, Garrett was already a millionaire. At 25, he co-founded StumbleUpon, a discovery engine that let users "stumble" across interesting websites. It grew fast and was acquired by eBay in 2007 for $75 million.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `But Garrett wasn’t done. In 2008, while in Paris struggling to hail a cab, he came up with a simple idea — what if you could order a ride from your phone? He returned to San Francisco, teamed up with Travis Kalanick, and by 2009, Uber was born.` 
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Garrett was the visionary behind Uber’s concept and even came up with the name. While Travis became the public face, Garrett quietly focused on product and innovation.` 
+  //     },
+  //     {
+  //       type: 'quote',
+  //       text: `"I just wanted to solve a problem — getting a reliable ride with the tap of a button."`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Uber’s growth was explosive. Within a few years, it disrupted transportation globally. By the time Uber went public in 2019, Garrett’s net worth had soared past $3 billion.` 
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Unlike minimalist founders, Garrett embraced luxury. He purchased a $72 million mansion in Beverly Hills, featuring 12 bedrooms, a private theater, and a panoramic view of Los Angeles.` 
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `A fan of aviation, Garrett co-founded Expa, a startup studio where one of his projects was BlackJet — dubbed "Uber for private jets." Though BlackJet eventually shut down, Garrett didn’t stop flying private.` 
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `His garage includes a McLaren P1, a Tesla Model S, and a vintage Porsche. Known for exclusive parties and art collecting, Garrett enjoys the billionaire lifestyle but stays out of the media spotlight.` 
+  //     },
+  //     {
+  //       type: 'lifestyle',
+  //       title: "Where is Garrett Camp Now?",
+  //       items: [
+  //         "Co-founder of Uber, still holding significant equity",
+  //         "Founder of Expa, backing startups in travel and tech",
+  //         "Owns a $72M mansion in Beverly Hills",
+  //         "Drives luxury cars like McLaren and Porsche",
+  //         "Regularly flies private and invests in futuristic projects"
+  //       ]
+  //     }
+  //   ],
+  //   milestones: [
+  //     { year: 2002, title: "Founded StumbleUpon", description: "First success, sold to eBay for $75M" },
+  //     { year: 2009, title: "Co-Founded Uber", description: "Turned a simple idea into a global phenomenon" },
+  //     { year: 2019, title: "Uber IPO", description: "Became a billionaire as Uber went public" },
+  //     { year: 2023, title: "Living in Luxury", description: "Invests through Expa while enjoying a high-end lifestyle" }
+  //   ]
+  // },
+  // {
+  //   id: 19,
+  //   name: "Ala' Alsallal",
+  //   image: "/images/ala_alsallal.jpg",
+  //   title: "From Amman Student to CEO of the Arab World's Largest Online Bookstore",
+  //   teaser: "How Ala' Alsallal built Jamalon from a simple idea into a multi-million dollar platform serving millions of readers across the Middle East.",
+  //   content: [
+  //     {
+  //       type: 'text',
+  //       text: `Ala' Alsallal grew up in Amman, Jordan. He was deeply influenced by his family's passion for education and reading. As a teenager, he noticed how difficult it was to access Arabic books online — a problem few people were trying to solve.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `While studying computer science at the University of Jordan, Ala' decided to act. At just 22 years old, he started working on Jamalon — an online bookstore focused on Arabic titles. Ala' worked from his room, coding the first version himself and personally managing orders.` 
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `He partnered directly with local publishers in Amman, offering books nobody else had online. With no outside funding, Ala' bootstrapped Jamalon’s early growth by hand-delivering books in Jordan and building word-of-mouth through Facebook groups and university partnerships.` 
+  //     },
+  //     {
+  //       type: 'quote',
+  //       text: `"Access to knowledge shouldn’t be limited by where you live. Books should reach everyone who seeks them."`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `By his late 20s, Jamalon expanded across the Middle East, listing over 10 million titles and partnering with 3,000 publishers. Major media outlets called it the Amazon of the Arab world for books.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Today, Jamalon generates multi-million dollar annual revenues. Ala' is estimated to have a personal net worth in the range of $5 to $10 million, although exact figures are private. Despite his success, he prefers a grounded lifestyle — living between Amman and Dubai, reinvesting profits into growing the business and promoting Arabic literacy.` 
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Ala's focus remains on expanding access to knowledge, modernizing publishing in the region, and mentoring young entrepreneurs in Jordan and the wider Arab world.`
+  //     },
+  //     {
+  //       type: 'lifestyle',
+  //       title: "Where is Ala' Alsallal Now?",
+  //       items: [
+  //         "Founder and CEO of Jamalon",
+  //         "Splits time between Amman and Dubai",
+  //         "Invests in literacy and tech education initiatives",
+  //         "Leads efforts to modernize the Arab publishing industry"
+  //       ]
+  //     }
+  //   ],
+  //   milestones: [
+  //     { year: 2010, title: "Launched Jamalon at 22", description: "Built the first major Arabic online bookstore while studying computer science" },
+  //     { year: 2014, title: "Expanded to Dubai", description: "Opened regional operations and scaled across the Gulf" },
+  //     { year: 2017, title: "Reached 10 Million Titles", description: "Partnered with over 3,000 publishers across MENA" },
+  //     { year: 2023, title: "Built a Multi-Million Dollar Company", description: "Continues to lead Jamalon as the dominant Arabic books platform" }
+  //   ]
+  // },
+  // {
+  //   id: 20,
+  //   name: "Shane Parrish",
+  //   image: "/images/shane_parrish.jpg",
+  //   title: "The Spy Who Quietly Built One of the Smartest Communities Online",
+  //   teaser: "How Shane Parrish went from a secretive intelligence officer to founding Farnam Street — the blog quietly shaping the thinking of billionaires and world leaders.",
+  //   content: [
+  //     {
+  //       type: 'text',
+  //       text: `Shane Parrish grew up in Ottawa, Canada. From an early age, he was obsessed with understanding how the world worked — not just facts, but decision-making, thinking, and patterns.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `After college, Shane joined Canada's top intelligence agency, the Communications Security Establishment (CSE). His work involved cyber defense and national security, operating behind closed doors where precision and decision-making could mean everything.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `While working long, stressful hours, Shane realized something: despite being surrounded by brilliant people, very few were actually trained in how to think clearly under pressure. He started reading obsessively outside work — diving into philosophy, psychology, mental models, and decision theory.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `To keep track of what he learned, he launched a small, anonymous blog called Farnam Street — named after the street where Berkshire Hathaway’s offices are located. Shane didn't promote it. He simply wrote to organize his thinking.`
+  //     },
+  //     {
+  //       type: 'quote',
+  //       text: `"I started Farnam Street as a personal project. It was just me trying to get better at making decisions."`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Without realizing it, his quiet writing style attracted some of the world's smartest people. Executives, investors, founders — all started following Farnam Street. His simple, deep breakdowns of decision-making spread through word of mouth.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `In 2016, Shane left intelligence work to focus full-time on building Farnam Street into something bigger. He launched podcasts, courses, and premium memberships — helping others learn timeless thinking skills.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Today, Shane runs Farnam Street and the Knowledge Project podcast, both massively influential in elite circles. He generates multiple millions in revenue per year through memberships, books, and partnerships — all without chasing hype, ads, or viral marketing.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Despite his success, Shane keeps a low profile. He lives quietly in Canada with his family, away from the noise of Silicon Valley. His focus remains the same: helping people think better, make better decisions, and live intentionally.`
+  //     },
+  //     {
+  //       type: 'lifestyle',
+  //       title: "Where is Shane Parrish Now?",
+  //       items: [
+  //         "Founder of Farnam Street, inspiring CEOs, investors, and world leaders",
+  //         "Host of The Knowledge Project, one of the top decision-making podcasts",
+  //         "Lives in Ottawa, Canada, focusing on family, writing, and thinking",
+  //         "Runs a multi-million dollar business without employees or hype",
+  //         "Teaches mental models, timeless strategies, and the art of clear thinking"
+  //       ]
+  //     }
+  //   ],
+  //   milestones: [
+  //     { year: 2006, title: "Started Farnam Street", description: "Began anonymously blogging lessons on decision-making" },
+  //     { year: 2016, title: "Left Intelligence Career", description: "Quit his job to focus full-time on building Farnam Street" },
+  //     { year: 2018, title: "Launched The Knowledge Project", description: "Started one of the top business and thinking podcasts" },
+  //     { year: 2023, title: "Built a Global Thinking Community", description: "Runs a multi-million dollar business inspiring better decisions" }
+  //   ]
+  // }
+  
+  
+  
+  
   
   
   
