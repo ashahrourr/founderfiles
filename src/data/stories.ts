@@ -699,7 +699,7 @@ export const stories: Story[] = [
       },
       {
         type: 'text',
-        text: `Today, Diaspora* is still maintained by the open-source community, a testament to Ilya’s vision that technology should empower people, not exploit them.` 
+        text: `Today, Diaspora is still maintained by the open-source community, a testament to Ilya’s vision that technology should empower people, not exploit them.` 
       },
       {
         type: 'lifestyle',
