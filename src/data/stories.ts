@@ -695,7 +695,7 @@ export const stories: Story[] = [
       },
       {
         type: 'text',
-        text: `Yet, his legacy lives on. Diaspora* didn’t become the next Facebook, but it sparked a global conversation about data privacy, decentralization, and ethical tech — years before these became mainstream concerns.` 
+        text: `Yet, his legacy lives on. Diaspora didn’t become the next Facebook, but it sparked a global conversation about data privacy, decentralization, and ethical tech — years before these became mainstream concerns.` 
       },
       {
         type: 'text',
@@ -1263,9 +1263,107 @@ export const stories: Story[] = [
   //     { year: 2018, title: "Launched The Knowledge Project", description: "Started one of the top business and thinking podcasts" },
   //     { year: 2023, title: "Built a Global Thinking Community", description: "Runs a multi-million dollar business inspiring better decisions" }
   //   ]
-  // }
-  
-  
+  // },
+  // {
+  //   id: 21,
+  //   name: "Vlad Magdalin",
+  //   image: "/images/vlad_magdalain.jpg",
+  //   title: "From Visa Battles to No-Code Billionaire",
+  //   teaser: "How Vlad Magdalin bootstrapped Webflow from a rejected visa idea to a platform powering millions of websites without code.",
+  //   content: [
+  //     {
+  //       type: 'text',
+  //       text: `Vlad Magdalin grew up in Soviet-era Russia, where access to technology was limited. At 16, he discovered programming through pirated software and outdated computers, teaching himself to code by building simple games. After immigrating to the U.S. in his early 20s, he faced a decade-long struggle with visa restrictions that nearly derailed his tech dreams.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `While working as a software engineer in California, Vlad repeatedly tried to launch startups — only to have visa issues force him to abandon projects. In 2012, at 30 years old, he began working nights on a new idea: a visual tool that let designers build responsive websites without coding. He called it Webflow.`
+  //     },
+  //     {
+  //       type: 'quote',
+  //       text: `"I wanted to give people the superpower I never had — creating for the web, unconstrained by visas or technical barriers."`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `For two years, Vlad and his co-founder (and brother) Sergie coded in secrecy, bootstrapping with savings and freelance work. They launched quietly in 2013, sharing Webflow on Hacker News and designer forums. Developers dismissed it as a toy, but designers flocked to its intuitive interface.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Without VC funding, Webflow grew through word-of-mouth. By 2019, it powered over 500,000 sites. That year, Vlad finally secured his U.S. citizenship — and Webflow raised its first $72M Series A, instantly becoming a unicorn.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Today, Webflow hosts over 3.5 million sites for companies like Dell, Zendesk, and Rakuten. Vlad still leads product, focusing on democratizing web development while resisting Silicon Valley’s growth-at-all-costs pressure.`
+  //     },
+  //     {
+  //       type: 'lifestyle',
+  //       title: "Where is Vlad Magdalin Now?",
+  //       items: [
+  //         "CEO of Webflow, valued at $4 billion+",
+  //         "Advocates for no-code education in underserved communities",
+  //         "Lives in San Francisco but avoids tech scene glamour",
+  //         "Drives a 10-year-old Prius, reinvests profits into product",
+  //         "Hosts 'No-Code Conf' to empower non-technical creators"
+  //       ]
+  //     }
+  //   ],
+  //   milestones: [
+  //     { year: 2012, title: "Secretly Starts Webflow", description: "Coded nights while navigating visa challenges" },
+  //     { year: 2013, title: "Launched on Hacker News", description: "Gained traction with designers despite developer skepticism" },
+  //     { year: 2019, title: "Citizenship & Unicorn Status", description: "Secured U.S. status and raised $72M Series A" },
+  //     { year: 2023, title: "4M+ Users", description: "Webflow becomes backbone of the no-code movement" }
+  //   ]
+  // },
+  // {
+  //   id: 22,
+  //   name: "Mitchell Hashimoto",
+  //   image: "/images/mitchell_hashimoto.jpg",
+  //   title: "The College Dropout Who Automated the Cloud",
+  //   teaser: "How Mitchell Hashimoto turned a weekend project into HashiCorp — the $5B backbone of modern DevOps.",
+  //   content: [
+  //     {
+  //       type: 'text',
+  //       text: `Mitchell Hashimoto grew up in Southern California, obsessed with computers from age 8. By 12, he was hacking Linux servers and building websites for local businesses. At 18, he enrolled at the University of Washington but dropped out after one semester — formal education couldn’t keep up with his hunger to build.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `In 2010, at 21, Mitchell released Vagrant — an open-source tool that simplified setting up development environments. He coded it over a weekend to solve his own frustration with inconsistent setups. Sharing it on Hacker News, it went viral overnight. Developers loved its simplicity.`
+  //     },
+  //     {
+  //       type: 'quote',
+  //       text: `"I just wanted to stop wasting time configuring virtual machines. Turns out, everyone else did too."`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `With no business plan, Mitchell partnered with Armon Dadgar, a friend from college, to turn Vagrant into a company. They named it HashiCorp ("bridge builder" in Japanese) and adopted a unique model: open-source tools with enterprise support.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Over the next decade, they released Terraform, Vault, and Consul — tools that became the foundation of cloud infrastructure. Companies like Stripe, Shopify, and NASA adopted them to manage servers, secrets, and networks. Mitchell stayed hands-on, coding core features himself.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `In 2021, HashiCorp went public at a $15B valuation. Mitchell, then 32, owned ~10% of the company but kept coding in a hoodie while peers chased Silicon Valley fame. He stepped down as CEO in 2016 to focus on engineering, a rarity among founders.`
+  //     },
+  //     {
+  //       type: 'lifestyle',
+  //       title: "Where is Mitchell Hashimoto Now?",
+  //       items: [
+  //         "Technical advisor at HashiCorp (valued at $5B+ in 2024)",
+  //         "Still contributes code to Terraform and Vault",
+  //         "Lives in the Bay Area but avoids tech scene events",
+  //         "Drives a Tesla Model 3 — his only luxury splurge",
+  //         "Hosts engineering workshops for underrepresented groups"
+  //       ]
+  //     }
+  //   ],
+  //   milestones: [
+  //     { year: 2010, title: "Launched Vagrant at 21", description: "Open-source tool went viral on Hacker News" },
+  //     { year: 2012, title: "Co-Founded HashiCorp", description: "Built tools for the cloud-native era" },
+  //     { year: 2021, title: "HashiCorp IPO at $15B", description: "Went public while Mitchell stayed focused on code" },
+  //     { year: 2024, title: "Quiet Billionaire", description: "Continues engineering despite $500M+ net worth" }
+  //   ]
+  // },
   
   
   
