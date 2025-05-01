@@ -721,68 +721,68 @@ export const stories: Story[] = [
     ]
   },
 
-  // {
-  //   id: 12,
-  //   name: "Sahil Lavingia",
-  //   image: "/images/sahil_lavingia.jpg",
-  //   title: "The Designer Who Turned a Weekend Project Into a $100M Business — On His Terms",
-  //   teaser: "How Sahil Lavingia built Gumroad, walked away from VC expectations, and designed a life around freedom and creativity.",
-  //   content: [
-  //     {
-  //       type: 'text',
-  //       text: `Sahil Lavingia grew up between New York and Singapore, always drawn to creativity and design. He enrolled at USC for computer science but dropped out at 18 after landing a role as the first designer at Pinterest. That experience exposed him to Silicon Valley’s startup world — but also showed him how complicated it was to build simple tools for creators.`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `In 2011, at just 19, Sahil built Gumroad over a weekend. It was born from his frustration — why was it so hard for creators to sell a digital product, like an ebook or design asset, directly to their audience? He shared the project on Twitter, Hacker News, and with his network from Pinterest. The response was immediate: creators loved the simplicity.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Excited by early traction, Sahil raised $8 million from top VCs, including Kleiner Perkins. He hired a team and tried to scale Gumroad into a classic Silicon Valley success story. But growth wasn’t fast enough for venture expectations.` 
-  //     },
-  //     {
-  //       type: 'quote',
-  //       text: `"I built something people wanted — just not at the scale VCs needed to justify their investment."`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `By 2015, Sahil faced a tough decision. Gumroad was generating steady revenue, but it wasn’t a unicorn. Instead of chasing unsustainable growth or shutting down, he laid off most of his team, returned the office lease, and moved Gumroad to a one-man operation.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `He automated everything he could — payments, support, infrastructure — and quietly grew Gumroad as a lean, profitable business. No more investor pressure. No more hiring sprees. Just a sustainable tool serving creators.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Sahil became known for his radical transparency, publishing Gumroad’s financials publicly and openly discussing the downsides of venture capital. His honest approach attracted even more creators to the platform.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `By 2020, Gumroad was processing over $10 million a month for creators — all run by Sahil and a few contractors. He had proven that you don’t need a big team or VC backing to build a meaningful, profitable company.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Now in his early 30s, Sahil lives in Provo, Utah, far from Silicon Valley. He spends his days painting, writing, angel investing, and working just a few hours a week. He doesn’t own flashy cars or mansions — instead, he prioritizes freedom, creativity, and helping other founders escape the growth-at-all-costs mindset.` 
-  //     },
-  //     {
-  //       type: 'lifestyle',
-  //       title: "Where is Sahil Lavingia Now?",
-  //       items: [
-  //         "Runs Gumroad solo with a few contractors, serving thousands of creators",
-  //         "Lives in Provo, Utah, focusing on art, writing, and investing",
-  //         "Drives a modest car, avoids luxury for intentional living",
-  //         "Publishes essays on entrepreneurship, creativity, and calm business",
-  //         "Invests in startups that align with sustainable and creator-friendly values"
-  //       ]
-  //     }
-  //   ],
-  //   milestones: [
-  //     { year: 2011, title: "Launched Gumroad at 19", description: "Built in a weekend, shared on Twitter and Hacker News" },
-  //     { year: 2012, title: "Raised $8M VC Funding", description: "Scaled team but growth didn’t match VC expectations" },
-  //     { year: 2015, title: "Downsized to Solo Operation", description: "Laid off team, pivoted to profitability" },
-  //     { year: 2023, title: "Gumroad Hits $100M+ in Creator Payouts", description: "Proved calm, lean businesses can thrive" }
-  //   ]
-  // },
+  {
+    id: 12,
+    name: "Sahil Lavingia",
+    image: "/images/sahil_lavingia.jpg",
+    title: "The Designer Who Turned a Weekend Project Into a $100M Business — On His Terms",
+    teaser: "How Sahil Lavingia built Gumroad, walked away from VC expectations, and designed a life around freedom and creativity.",
+    content: [
+      {
+        type: 'text',
+        text: `Sahil Lavingia grew up between New York and Singapore, always drawn to creativity and design. He enrolled at USC for computer science but dropped out at 18 after landing a role as the first designer at Pinterest. That experience exposed him to Silicon Valley’s startup world — but also showed him how complicated it was to build simple tools for creators.`
+      },
+      {
+        type: 'text',
+        text: `In 2011, at just 19, Sahil built Gumroad over a weekend. It was born from his frustration — why was it so hard for creators to sell a digital product, like an ebook or design asset, directly to their audience? He shared the project on Twitter, Hacker News, and with his network from Pinterest. The response was immediate: creators loved the simplicity.` 
+      },
+      {
+        type: 'text',
+        text: `Excited by early traction, Sahil raised $8 million from top VCs, including Kleiner Perkins. He hired a team and tried to scale Gumroad into a classic Silicon Valley success story. But growth wasn’t fast enough for venture expectations.` 
+      },
+      {
+        type: 'quote',
+        text: `"I built something people wanted — just not at the scale VCs needed to justify their investment."`
+      },
+      {
+        type: 'text',
+        text: `By 2015, Sahil faced a tough decision. Gumroad was generating steady revenue, but it wasn’t a unicorn. Instead of chasing unsustainable growth or shutting down, he laid off most of his team, returned the office lease, and moved Gumroad to a one-man operation.` 
+      },
+      {
+        type: 'text',
+        text: `He automated everything he could — payments, support, infrastructure — and quietly grew Gumroad as a lean, profitable business. No more investor pressure. No more hiring sprees. Just a sustainable tool serving creators.` 
+      },
+      {
+        type: 'text',
+        text: `Sahil became known for his radical transparency, publishing Gumroad’s financials publicly and openly discussing the downsides of venture capital. His honest approach attracted even more creators to the platform.` 
+      },
+      {
+        type: 'text',
+        text: `By 2020, Gumroad was processing over $10 million a month for creators — all run by Sahil and a few contractors. He had proven that you don’t need a big team or VC backing to build a meaningful, profitable company.` 
+      },
+      {
+        type: 'text',
+        text: `Now in his early 30s, Sahil lives in Provo, Utah, far from Silicon Valley. He spends his days painting, writing, angel investing, and working just a few hours a week. He doesn’t own flashy cars or mansions — instead, he prioritizes freedom, creativity, and helping other founders escape the growth-at-all-costs mindset.` 
+      },
+      {
+        type: 'lifestyle',
+        title: "Where is Sahil Lavingia Now?",
+        items: [
+          "Runs Gumroad solo with a few contractors, serving thousands of creators",
+          "Lives in Provo, Utah, focusing on art, writing, and investing",
+          "Drives a modest car, avoids luxury for intentional living",
+          "Publishes essays on entrepreneurship, creativity, and calm business",
+          "Invests in startups that align with sustainable and creator-friendly values"
+        ]
+      }
+    ],
+    milestones: [
+      { year: 2011, title: "Launched Gumroad at 19", description: "Built in a weekend, shared on Twitter and Hacker News" },
+      { year: 2012, title: "Raised $8M VC Funding", description: "Scaled team but growth didn’t match VC expectations" },
+      { year: 2015, title: "Downsized to Solo Operation", description: "Laid off team, pivoted to profitability" },
+      { year: 2023, title: "Gumroad Hits $100M+ in Creator Payouts", description: "Proved calm, lean businesses can thrive" }
+    ]
+  },
 
   // {
   //   id: 13,

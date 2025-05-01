@@ -18,7 +18,7 @@ const LIKE_OFFSETS: Record<number, number> = {
   9: 1826,
   10: 3197,
   11: 4281,
-  // 12:,
+  12: 3891,
   // 13:,
   // 14:,
   // 15:,
