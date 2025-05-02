@@ -784,64 +784,64 @@ export const stories: Story[] = [
     ]
   },
 
-  // {
-  //   id: 13,
-  //   name: "Derrick Reimer",
-  //   image: "/images/derrick_reimer.jpg",
-  //   title: "Why Derrick Reimer Shut Down His Startup to Build the Right One",
-  //   teaser: "How Derrick Reimer bootstrapped Drip, walked away from VC money, and proved that calm businesses can win.",
-  //   content: [
-  //     {
-  //       type: 'text',
-  //       text: `Derrick Reimer grew up in Minnesota with a passion for building software. He studied Computer Science at South Dakota State University, but even before graduating, he knew the typical corporate path wasn’t for him.`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `After college, Derrick worked as a freelance developer, helping businesses build web apps. It was during this time, in his mid-20s, that he teamed up with entrepreneur Rob Walling to launch Drip — an email marketing tool designed for small businesses that couldn't afford complex platforms like HubSpot.`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `With no outside funding, they grew Drip by focusing on indie hackers, startups, and solopreneurs. Derrick handled all the technical development while Rob led marketing through podcasts, blogging, and niche communities. Word of mouth and tight customer feedback loops drove steady growth.` 
-  //     },
-  //     {
-  //       type: 'quote',
-  //       text: `"We didn’t want hyper-growth. We wanted a business that gave us freedom and served real customers."`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `By 2016, Drip had become a leader in lightweight email automation. The company was acquired by Leadpages for a multi-million dollar exit, giving Derrick financial independence before 30.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `In 2019, Derrick launched Level, a Slack competitor focused on calm communication. But after raising VC money, he realized he was building something he didn’t believe in — a product that required constant growth pressure. He made the rare decision to shut it down and return the funds.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Returning to his bootstrapped roots, Derrick launched SavvyCal in 2020 — a scheduling tool designed to respect both the sender and recipient. He marketed it through Twitter, podcasts, and indie hacker networks, reaching profitability within a year.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Now in his early 30s, Derrick lives a quiet life in Minnesota. No flashy cars or Silicon Valley lifestyle — just a cozy home, a reliable car, and the freedom to work on projects he enjoys. He spends his days coding, podcasting, and mentoring founders who want to build calm, sustainable businesses.` 
-  //     },
-  //     {
-  //       type: 'lifestyle',
-  //       title: "Where is Derrick Reimer Now?",
-  //       items: [
-  //         "Founder of SavvyCal, a profitable solo SaaS",
-  //         "Co-founder of Drip, exited for a multi-million dollar deal",
-  //         "Lives in Minnesota, embracing simple living and remote work",
-  //         "Drives a modest car, focuses on freedom over luxury",
-  //         "Shares insights through podcasts, writing, and mentoring indie founders"
-  //       ]
-  //     }
-  //   ],
-  //   milestones: [
-  //     { year: 2013, title: "Launched Drip", description: "Bootstrapped an email marketing SaaS while freelancing" },
-  //     { year: 2016, title: "Drip Acquired", description: "Sold to Leadpages for a multi-million dollar exit" },
-  //     { year: 2019, title: "Shut Down Level", description: "Returned VC funds after realizing misaligned vision" },
-  //     { year: 2020, title: "Founded SavvyCal", description: "Bootstrapped to profitability within a year" }
-  //   ]
-  // },
+  {
+    id: 13,
+    name: "Derrick Reimer",
+    image: "/images/derrick_reimer.jpg",
+    title: "Why Derrick Reimer Shut Down His Startup to Build the Right One",
+    teaser: "How Derrick Reimer bootstrapped Drip, walked away from VC money, and proved that calm businesses can win.",
+    content: [
+      {
+        type: 'text',
+        text: `Derrick Reimer grew up in Minnesota with a passion for building software. He studied Computer Science at South Dakota State University, but even before graduating, he knew the typical corporate path wasn’t for him.`
+      },
+      {
+        type: 'text',
+        text: `After college, Derrick worked as a freelance developer, helping businesses build web apps. It was during this time, in his mid-20s, that he teamed up with entrepreneur Rob Walling to launch Drip — an email marketing tool designed for small businesses that couldn't afford complex platforms like HubSpot.`
+      },
+      {
+        type: 'text',
+        text: `With no outside funding, they grew Drip by focusing on indie hackers, startups, and solopreneurs. Derrick handled all the technical development while Rob led marketing through podcasts, blogging, and niche communities. Word of mouth and tight customer feedback loops drove steady growth.` 
+      },
+      {
+        type: 'quote',
+        text: `"We didn’t want hyper-growth. We wanted a business that gave us freedom and served real customers."`
+      },
+      {
+        type: 'text',
+        text: `By 2016, Drip had become a leader in lightweight email automation. The company was acquired by Leadpages for a multi-million dollar exit, giving Derrick financial independence before 30.` 
+      },
+      {
+        type: 'text',
+        text: `In 2019, Derrick launched Level, a Slack competitor focused on calm communication. But after raising VC money, he realized he was building something he didn’t believe in — a product that required constant growth pressure. He made the rare decision to shut it down and return the funds.` 
+      },
+      {
+        type: 'text',
+        text: `Returning to his bootstrapped roots, Derrick launched SavvyCal in 2020 — a scheduling tool designed to respect both the sender and recipient. He marketed it through Twitter, podcasts, and indie hacker networks, reaching profitability within a year.` 
+      },
+      {
+        type: 'text',
+        text: `Now in his early 30s, Derrick lives a quiet life in Minnesota. No flashy cars or Silicon Valley lifestyle — just a cozy home, a reliable car, and the freedom to work on projects he enjoys. He spends his days coding, podcasting, and mentoring founders who want to build calm, sustainable businesses.` 
+      },
+      {
+        type: 'lifestyle',
+        title: "Where is Derrick Reimer Now?",
+        items: [
+          "Founder of SavvyCal, a profitable solo SaaS",
+          "Co-founder of Drip, exited for a multi-million dollar deal",
+          "Lives in Minnesota, embracing simple living and remote work",
+          "Drives a modest car, focuses on freedom over luxury",
+          "Shares insights through podcasts, writing, and mentoring indie founders"
+        ]
+      }
+    ],
+    milestones: [
+      { year: 2013, title: "Launched Drip", description: "Bootstrapped an email marketing SaaS while freelancing" },
+      { year: 2016, title: "Drip Acquired", description: "Sold to Leadpages for a multi-million dollar exit" },
+      { year: 2019, title: "Shut Down Level", description: "Returned VC funds after realizing misaligned vision" },
+      { year: 2020, title: "Founded SavvyCal", description: "Bootstrapped to profitability within a year" }
+    ]
+  },
 
   // {
   //   id: 14,
@@ -1364,6 +1364,92 @@ export const stories: Story[] = [
   //     { year: 2024, title: "Quiet Billionaire", description: "Continues engineering despite $500M+ net worth" }
   //   ]
   // },
+  // {
+  //   id: 23,
+  //   name: "Shay Banon",
+  //   image: "/images/shay_banon.jpg",
+  //   title: "The Reluctant Billionaire Who Built the Internet’s Search Engine Backbone",
+  //   teaser: "How a husband’s gift for his wife’s cooking blog became Elasticsearch — the invisible tech behind Wikipedia, Netflix, and 40% of Fortune 500 companies.",
+  //   content: [
+  //     {
+  //       type: 'text',
+  //       text: `Shay Banon was born in 1977 in Haifa, Israel, to a family with no tech background. His first exposure to programming came at 14 through a dusty Commodore 64 at his uncle’s electronics repair shop. By 18, he was reverse-engineering video games and writing mods for Doom. After mandatory IDF service, he moved to London in 2001 to study distributed systems, only to drop out when he realized he could learn faster by building.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `In 2004, unemployed and living in a cramped Paris apartment with his wife — a culinary student — Shay noticed her struggling to organize recipes across cookbooks, blogs, and scraps of paper. Using Java, he built Compass, a search engine tailored for her needs. Though primitive, it sparked an obsession: "What if search could adapt to any data, not just web pages?"`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `For six years, Shay quietly iterated. By day, he worked as a distributed systems engineer at companies like Cisco. By night, he rebuilt Compass into something revolutionary. In 2010, he open-sourced Elasticsearch — a distributed, RESTful search engine that scaled horizontally with ease. Developers downloaded it 10,000 times in the first week.`
+  //     },
+  //     {
+  //       type: 'quote',
+  //       text: `"I didn’t care about disrupting Google. I just wanted developers to stop wasting time on search infrastructure."`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Growth exploded organically. Engineers at Netflix used Elasticsearch to power recommendations. Wikipedia adopted it for real-time edits. NASA tracked Mars rover data with it. By 2012, Shay co-founded Elastic NV with Steven Schuurman, adopting a controversial "open core" model: free open-source Elasticsearch for all, with paid enterprise features like security and analytics.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Shay’s technical brilliance clashed with Silicon Valley norms. He refused to relocate Elastic’s HQ from Amsterdam to SF, calling the Valley’s culture "a distraction from real engineering." When VCs pushed for aggressive monetization, he prioritized community trust — even letting users fork Elasticsearch in 2021 after a licensing dispute with Amazon.`
+  //     },
+  //     {
+  //       type: 'text',
+  //       text: `Elastic’s 2018 IPO valued the company at $4.9B, making Shay a billionaire. Yet he kept coding in Elasticsearch’s GitHub repo under the alias "kimchy" (a nod to his wife’s kimchi recipes). Colleagues recall him reviewing pull requests mid-flight, often in economy class.`
+  //     },
+  //     {
+  //       type: 'lifestyle',
+  //       title: "Shay Banon Today: Code Over Cash",
+  //       items: [
+  //         "Resides in Amsterdam in a modest townhouse (no security, no staff)",
+  //         "Still contributes to Elasticsearch under pseudonyms",
+  //         "Drives a 2018 Tesla Model S — bought used, after IPO",
+  //         "Funds the OpenSearch Foundation to protect open-source search",
+  //         "Avoids conferences, mentors engineers via GitHub Issues instead",
+  //         "Net worth: ~$1.2B (2024), but 95% tied to Elastic stock he rarely sells"
+  //       ]
+  //     }
+  //   ],
+  //   milestones: [
+  //     { 
+  //       year: 2004,
+  //       title: "Built Compass for His Wife",
+  //       description: "First search engine prototype to organize her recipe chaos" 
+  //     },
+  //     { 
+  //       year: 2010,
+  //       title: "Elasticsearch v0.1 Released",
+  //       description: "Open-sourced on GitHub; 100k+ deployments in first year" 
+  //     },
+  //     { 
+  //       year: 2012,
+  //       title: "Founded Elastic NV",
+  //       description: "Bootstrapped with $5M from NEA, HQ in Amsterdam" 
+  //     },
+  //     { 
+  //       year: 2015,
+  //       title: "Elastic Stack Launched",
+  //       description: "Integrated Kibana, Logstash, and Beats — now industry standard for analytics" 
+  //     },
+  //     { 
+  //       year: 2018,
+  //       title: "NYSE: ESTC IPO",
+  //       description: "Largest open-source IPO since Red Hat; closed at $70/share" 
+  //     },
+  //     { 
+  //       year: 2021,
+  //       title: "Forked OpenSearch",
+  //       description: "Led community fork after Amazon AWS feud; retained 80% of users" 
+  //     },
+  //     { 
+  //       year: 2022,
+  //       title: "Stepped Down as CTO",
+  //       description: "Left Elastic to focus on decentralized AI/ML infrastructure projects" 
+  //     }
+  //   ]
+  // }
   
   
   
