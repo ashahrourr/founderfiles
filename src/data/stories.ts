@@ -843,72 +843,72 @@ export const stories: Story[] = [
     ]
   },
 
-  // {
-  //   id: 14,
-  //   name: "Sandi MacPherson",
-  //   image: "/images/sandi_macpherson.jpg",
-  //   title: "How a Non-Technical Founder Built Silicon Valley’s Most Exclusive Network",
-  //   teaser: "Sandi MacPherson turned a simple Google Sheet into Quibb — connecting top tech leaders without writing a single line of code.",
-  //   content: [
-  //     {
-  //       type: 'text',
-  //       text: `Sandi MacPherson grew up in Canada. She didn’t study computer science or business — she earned a science degree from Queen’s University, later pursuing a master's in environmental policy. Her early career was focused on climate change initiatives and policy research, a path that seemed destined for government or non-profits.`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `But in her late 20s, Sandi became fascinated by the tech industry’s pace and innovation. With no coding background and no Silicon Valley connections, she took a leap — moving to San Francisco to immerse herself in the startup world.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `While trying to break into tech, Sandi noticed a personal frustration: social media platforms like Twitter and LinkedIn were noisy and overwhelming. There was no curated space where serious tech professionals shared what they were actually reading.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `In 2013, instead of waiting for someone else to solve it, she hacked together a solution using Google Sheets and Mailchimp. She called it Quibb — an invite-only network where tech insiders could quietly share articles and insights.` 
-  //     },
-  //     {
-  //       type: 'quote',
-  //       text: `"I wasn’t technical, so I used the tools I had. It wasn’t about flashy features — it was about creating value for the right people."`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Quibb wasn’t open to everyone. Sandi personally vetted every applicant, making sure the community stayed high-quality. Within months, founders, investors, and executives from top companies were using Quibb daily — from Airbnb and Twitter to Andreessen Horowitz.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Without writing a line of code, Sandi had built one of Silicon Valley’s most exclusive networks. She raised a small seed round from investors impressed by her ability to create influence without scale.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `By 2017, Sandi decided to shut Quibb down — not because it failed, but because she wasn’t interested in turning it into a traditional startup chasing growth. Instead, she focused her energy on solving a bigger problem she experienced firsthand: the lack of diversity in tech funding.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `She launched initiatives like FiftyFifty Pledge and worked to connect underrepresented founders with investors, using her hard-earned network to open doors for others.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Today, Sandi lives back in Canada, working remotely on impact-driven projects. She never chased luxury or hype — no flashy cars or Silicon Valley mansions. Her success is defined by influence, community, and driving meaningful change in tech culture.` 
-  //     },
-  //     {
-  //       type: 'lifestyle',
-  //       title: "Where is Sandi MacPherson Now?",
-  //       items: [
-  //         "Leads diversity and inclusion initiatives in tech funding",
-  //         "Lives in Canada, working remotely on mission-driven projects",
-  //         "Known for building Quibb, the private network for top tech leaders",
-  //         "Invests time in connecting underrepresented founders with investors",
-  //         "Keeps a low profile, focused on impact over status"
-  //       ]
-  //     }
-  //   ],
-  //   milestones: [
-  //     { year: 2013, title: "Launched Quibb", description: "Created an invite-only tech network using no-code tools" },
-  //     { year: 2015, title: "Raised Seed Funding", description: "Secured investors based on influence, not scale" },
-  //     { year: 2017, title: "Shut Down Quibb", description: "Pivoted to focus on diversity in tech" },
-  //     { year: 2023, title: "Advocate for Inclusion", description: "Continues to drive change in startup funding culture" }
-  //   ]
-  // },
+  {
+    id: 14,
+    name: "Sandi MacPherson",
+    image: "/images/sandi_macpherson.jpg",
+    title: "How a Non-Technical Founder Built Silicon Valley’s Most Exclusive Network",
+    teaser: "Sandi MacPherson turned a simple Google Sheet into Quibb — connecting top tech leaders without writing a single line of code.",
+    content: [
+      {
+        type: 'text',
+        text: `Sandi MacPherson grew up in Canada. She didn’t study computer science or business — she earned a science degree from Queen’s University, later pursuing a master's in environmental policy. Her early career was focused on climate change initiatives and policy research, a path that seemed destined for government or non-profits.`
+      },
+      {
+        type: 'text',
+        text: `But in her late 20s, Sandi became fascinated by the tech industry’s pace and innovation. With no coding background and no Silicon Valley connections, she took a leap — moving to San Francisco to immerse herself in the startup world.` 
+      },
+      {
+        type: 'text',
+        text: `While trying to break into tech, Sandi noticed a personal frustration: social media platforms like Twitter and LinkedIn were noisy and overwhelming. There was no curated space where serious tech professionals shared what they were actually reading.` 
+      },
+      {
+        type: 'text',
+        text: `In 2013, instead of waiting for someone else to solve it, she hacked together a solution using Google Sheets and Mailchimp. She called it Quibb — an invite-only network where tech insiders could quietly share articles and insights.` 
+      },
+      {
+        type: 'quote',
+        text: `"I wasn’t technical, so I used the tools I had. It wasn’t about flashy features — it was about creating value for the right people."`
+      },
+      {
+        type: 'text',
+        text: `Quibb wasn’t open to everyone. Sandi personally vetted every applicant, making sure the community stayed high-quality. Within months, founders, investors, and executives from top companies were using Quibb daily — from Airbnb and Twitter to Andreessen Horowitz.` 
+      },
+      {
+        type: 'text',
+        text: `Without writing a line of code, Sandi had built one of Silicon Valley’s most exclusive networks. She raised a small seed round from investors impressed by her ability to create influence without scale.` 
+      },
+      {
+        type: 'text',
+        text: `By 2017, Sandi decided to shut Quibb down — not because it failed, but because she wasn’t interested in turning it into a traditional startup chasing growth. Instead, she focused her energy on solving a bigger problem she experienced firsthand: the lack of diversity in tech funding.` 
+      },
+      {
+        type: 'text',
+        text: `She launched initiatives like FiftyFifty Pledge and worked to connect underrepresented founders with investors, using her hard-earned network to open doors for others.` 
+      },
+      {
+        type: 'text',
+        text: `Today, Sandi lives back in Canada, working remotely on impact-driven projects. She never chased luxury or hype — no flashy cars or Silicon Valley mansions. Her success is defined by influence, community, and driving meaningful change in tech culture.` 
+      },
+      {
+        type: 'lifestyle',
+        title: "Where is Sandi MacPherson Now?",
+        items: [
+          "Leads diversity and inclusion initiatives in tech funding",
+          "Lives in Canada, working remotely on mission-driven projects",
+          "Known for building Quibb, the private network for top tech leaders",
+          "Invests time in connecting underrepresented founders with investors",
+          "Keeps a low profile, focused on impact over status"
+        ]
+      }
+    ],
+    milestones: [
+      { year: 2013, title: "Launched Quibb", description: "Created an invite-only tech network using no-code tools" },
+      { year: 2015, title: "Raised Seed Funding", description: "Secured investors based on influence, not scale" },
+      { year: 2017, title: "Shut Down Quibb", description: "Pivoted to focus on diversity in tech" },
+      { year: 2023, title: "Advocate for Inclusion", description: "Continues to drive change in startup funding culture" }
+    ]
+  },
   // {
   //   id: 15,
   //   name: "Joshua Browder",
