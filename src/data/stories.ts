@@ -909,64 +909,64 @@ export const stories: Story[] = [
       { year: 2023, title: "Advocate for Inclusion", description: "Continues to drive change in startup funding culture" }
     ]
   },
-  // {
-  //   id: 15,
-  //   name: "Joshua Browder",
-  //   image: "/images/joshua_browder.jpg",
-  //   title: "The Teen Who Took on Parking Tickets — And Then the Legal System",
-  //   teaser: "How Joshua Browder built DoNotPay at 18, turning a simple bot into the world’s first ‘robot lawyer’ and redefining access to justice.",
-  //   content: [
-  //     {
-  //       type: 'text',
-  //       text: `Joshua Browder grew up in London, England, the son of a prominent tech executive. From an early age, he was surrounded by conversations about technology and entrepreneurship, but his interests leaned towards solving real-world inefficiencies — especially those that frustrated everyday people.`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `At 18, while still a student at Stanford University, Joshua found himself repeatedly getting parking tickets he couldn’t afford to pay. Instead of just complaining, he decided to automate the process of appealing them — not just for himself, but for everyone.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `With minimal coding experience, he built **DoNotPay** — a simple chatbot designed to help users contest parking fines. What started as a side project in his dorm room quickly went viral after being featured in tech blogs and mainstream media.` 
-  //     },
-  //     {
-  //       type: 'quote',
-  //       text: `"I realized the legal system was designed to confuse people. I wanted to level the playing field."`
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Within months, DoNotPay helped overturn hundreds of thousands of dollars in tickets. But Joshua didn’t stop there. He expanded the platform to tackle other legal headaches — from canceling subscriptions to fighting bank fees and even suing robocallers.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `By his early 20s, Joshua had transformed DoNotPay into what he called "the world’s first robot lawyer," giving ordinary people free or low-cost access to legal tools that would otherwise require expensive attorneys.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `His unconventional approach attracted investors from Silicon Valley, raising millions to expand DoNotPay’s reach. But unlike typical startup founders chasing enterprise clients, Joshua stayed focused on consumer rights — building a product that fought for the little guy.` 
-  //     },
-  //     {
-  //       type: 'text',
-  //       text: `Today, in his mid-20s, Joshua leads DoNotPay from San Francisco. Despite his success, he’s known for keeping a relatively low profile — no luxury cars or flashy lifestyle. His focus remains on democratizing access to legal services and pushing boundaries on what automation can achieve.` 
-  //     },
-  //     {
-  //       type: 'lifestyle',
-  //       title: "Where is Joshua Browder Now?",
-  //       items: [
-  //         "CEO of DoNotPay, expanding AI-driven legal tools",
-  //         "Raised over $25M from top Silicon Valley investors",
-  //         "Lives in San Francisco, focused on product and advocacy",
-  //         "Known for challenging outdated legal systems with technology",
-  //         "Keeps a minimalist lifestyle, reinvesting in DoNotPay’s mission"
-  //       ]
-  //     }
-  //   ],
-  //   milestones: [
-  //     { year: 2015, title: "Launched DoNotPay at 18", description: "Built a chatbot to fight parking tickets while at Stanford" },
-  //     { year: 2017, title: "Expanded Legal Services", description: "Added tools for bank fees, subscriptions, and small claims" },
-  //     { year: 2020, title: "Raised Series A", description: "Secured $12M to grow DoNotPay’s AI legal platform" },
-  //     { year: 2023, title: "DoNotPay Goes Mainstream", description: "Used by millions to fight corporations and legal bureaucracy" }
-  //   ]
-  // },
+  {
+    id: 15,
+    name: "Joshua Browder",
+    image: "/images/joshua_browder.jpg",
+    title: "The Teen Who Took on Parking Tickets — And Then the Legal System",
+    teaser: "How Joshua Browder built DoNotPay at 18, turning a simple bot into the world’s first ‘robot lawyer’ and redefining access to justice.",
+    content: [
+      {
+        type: 'text',
+        text: `Joshua Browder grew up in London, England, the son of a prominent tech executive. From an early age, he was surrounded by conversations about technology and entrepreneurship, but his interests leaned towards solving real-world inefficiencies — especially those that frustrated everyday people.`
+      },
+      {
+        type: 'text',
+        text: `At 18, while still a student at Stanford University, Joshua found himself repeatedly getting parking tickets he couldn’t afford to pay. Instead of just complaining, he decided to automate the process of appealing them — not just for himself, but for everyone.` 
+      },
+      {
+        type: 'text',
+        text: `With minimal coding experience, he built **DoNotPay** — a simple chatbot designed to help users contest parking fines. What started as a side project in his dorm room quickly went viral after being featured in tech blogs and mainstream media.` 
+      },
+      {
+        type: 'quote',
+        text: `"I realized the legal system was designed to confuse people. I wanted to level the playing field."`
+      },
+      {
+        type: 'text',
+        text: `Within months, DoNotPay helped overturn hundreds of thousands of dollars in tickets. But Joshua didn’t stop there. He expanded the platform to tackle other legal headaches — from canceling subscriptions to fighting bank fees and even suing robocallers.` 
+      },
+      {
+        type: 'text',
+        text: `By his early 20s, Joshua had transformed DoNotPay into what he called "the world’s first robot lawyer," giving ordinary people free or low-cost access to legal tools that would otherwise require expensive attorneys.` 
+      },
+      {
+        type: 'text',
+        text: `His unconventional approach attracted investors from Silicon Valley, raising millions to expand DoNotPay’s reach. But unlike typical startup founders chasing enterprise clients, Joshua stayed focused on consumer rights — building a product that fought for the little guy.` 
+      },
+      {
+        type: 'text',
+        text: `Today, in his mid-20s, Joshua leads DoNotPay from San Francisco. Despite his success, he’s known for keeping a relatively low profile — no luxury cars or flashy lifestyle. His focus remains on democratizing access to legal services and pushing boundaries on what automation can achieve.` 
+      },
+      {
+        type: 'lifestyle',
+        title: "Where is Joshua Browder Now?",
+        items: [
+          "CEO of DoNotPay, expanding AI-driven legal tools",
+          "Raised over $25M from top Silicon Valley investors",
+          "Lives in San Francisco, focused on product and advocacy",
+          "Known for challenging outdated legal systems with technology",
+          "Keeps a minimalist lifestyle, reinvesting in DoNotPay’s mission"
+        ]
+      }
+    ],
+    milestones: [
+      { year: 2015, title: "Launched DoNotPay at 18", description: "Built a chatbot to fight parking tickets while at Stanford" },
+      { year: 2017, title: "Expanded Legal Services", description: "Added tools for bank fees, subscriptions, and small claims" },
+      { year: 2020, title: "Raised Series A", description: "Secured $12M to grow DoNotPay’s AI legal platform" },
+      { year: 2023, title: "DoNotPay Goes Mainstream", description: "Used by millions to fight corporations and legal bureaucracy" }
+    ]
+  },
   // {
   //   id: 16,
   //   name: "Sam Parr",
