@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
+import FounderImage from '@/components/FounderImage';
+import { useSupabaseClient, useUser } from '@/components/SupabaseProvider';
 import { useRouter } from 'next/navigation';
 import { Story } from '@/data/stories';
 
@@ -132,11 +132,11 @@ export default function StoryDetail({ story, onBack }: { story: Story; onBack: (
       <h1 className="text-3xl font-bold text-slate-100 mb-4">{story.title}</h1>
       <p className="text-slate-400 mb-6">{story.teaser}</p>
       <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-800 mb-8">
-        <Image
-          src={story.image || '/fallback-image.jpg'}
-          alt={story.name}
-          fill
-          className="object-cover object-[50%_35%]"
+        <FounderImage
+          src={story.image}
+          name={story.name}
+          sizes="(max-width: 768px) 100vw, 640px"
+          className="object-[50%_35%] text-4xl"
         />
       </div>
 

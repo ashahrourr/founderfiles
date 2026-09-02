@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { FiUser } from 'react-icons/fi';
-import { useUser } from '@supabase/auth-helpers-react';
+import { useUser } from '@/components/SupabaseProvider';
 import { useRouter } from 'next/navigation';
 
 export default function Navbar() {

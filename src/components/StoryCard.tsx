@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
+import { useSupabaseClient, useUser } from '@/components/SupabaseProvider';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import FounderImage from '@/components/FounderImage';
 import { Story } from '@/data/stories';
 
 const LIKE_OFFSETS: Record<number, number> = {
@@ -113,11 +113,11 @@ export default function StoryCard({
     >
       <div className="flex items-start gap-4">
         <div className="w-16 h-16 flex-shrink-0 relative rounded-lg overflow-hidden bg-slate-900 border border-slate-800">
-          <Image
-            src={story.image || '/fallback-image.jpg'}
-            alt={story.name}
-            fill
-            className="object-cover"
+          <FounderImage
+            src={story.image}
+            name={story.name}
+            sizes="64px"
+            className="text-sm"
           />
         </div>
         <div className="flex-1 space-y-1 relative pr-12">

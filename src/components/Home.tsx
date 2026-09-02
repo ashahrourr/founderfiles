@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { stories, Story, StorySection } from '@/data/stories';
 import Link from 'next/link';
-import Image from 'next/image';
-import { useUser } from '@supabase/auth-helpers-react';
+import FounderImage from '@/components/FounderImage';
+import { useUser } from '@/components/SupabaseProvider';
 import { useRouter } from 'next/navigation';
 import { FiUser } from 'react-icons/fi';
 import StoryCard from '@/components/StoryCard';
@@ -198,11 +198,11 @@ export default function Home() {
                   </div>
                   <p className="text-xl text-slate-400 mb-8">{selectedStory.teaser}</p>
                   <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-800">
-                    <Image
-                      src={selectedStory.image || '/fallback-image.jpg'}
-                      alt={selectedStory.name}
-                      fill
-                      className="object-cover object-[50%_35%]"
+                    <FounderImage
+                      src={selectedStory.image}
+                      name={selectedStory.name}
+                      sizes="(max-width: 768px) 100vw, 640px"
+                      className="object-[50%_35%] text-4xl"
                     />
                   </div>
                 </header>

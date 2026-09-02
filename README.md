@@ -77,21 +77,17 @@ themselves are static, so the reader works without Supabase — only auth and st
 
 ## Status
 
-Not currently deployed. `founderfiles.dev` no longer resolves, and Vercel refuses to build the
-project: **"Vulnerable version of Next.js detected."**
+Auth runs on **`@supabase/ssr`**. The original build used `@supabase/auth-helpers-react`, which
+Supabase has deprecated and which broke on any Next.js newer than 15.3.1 — leaving the project stuck
+on a release Vercel refuses to build ("vulnerable version of Next.js detected"). The provider was
+rewritten to expose the same `useSupabaseClient()` and `useUser()` hooks, so the six components that
+consume them only changed an import.
 
-The bind is that the two fixes conflict. Next 15.3.1 builds cleanly but is the version Vercel
-blocks. Anything newer builds *until* it reaches `/login` and `/logout`, which fail with
-`Cannot find module for page` — those pages use **`@supabase/auth-helpers-react`**, which Supabase
-has deprecated in favour of `@supabase/ssr` and which does not survive the upgrade.
-
-**To bring it back:** migrate `SupabaseProvider.tsx`, `login/page.tsx`, `logout/page.tsx` and the
-`useUser()` call in `Home.tsx` from `auth-helpers` to `@supabase/ssr`, then take the current Next 15.
-The stories are static, so the reader itself has no such dependency.
-
-⚠️ **12 of the 15 story images are missing from the repo** — `src/data/stories.ts` references
-`/images/<name>.jpg` for every founder, but only three are committed. Those stories render with an
-empty frame. Either the images need adding to `public/images/`, or the component needs a fallback.
+**Images fall back to initials.** Every story names an image, but most of those files are not in the
+repo. The old `src={image || '/fallback-image.jpg'}` never fired — the path was always truthy, it
+just 404'd into an empty frame. `FounderImage` catches the load failure and draws the founder's
+initials on a colour derived from their name, so a missing file degrades instead of leaving a hole.
+Dropping real images into `public/images/` still takes precedence.
 
 ## Stack
 

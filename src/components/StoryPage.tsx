@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { stories } from '@/data/stories';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import FounderImage from '@/components/FounderImage';
 import StoryCard from '@/components/StoryCard';
 import StoryList from '@/components/StoryList';
 import StoryDetail from '@/components/StoryDetail';
@@ -170,11 +170,11 @@ export default function StoryPage({ params: paramsPromise }: { params: Promise<{
                   </div>
                   <p className="text-xl text-slate-400 mb-8">{selectedStory.teaser}</p>
                   <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-800">
-                    <Image
+                    <FounderImage
                       src={selectedStory.image}
-                      alt={selectedStory.name}
-                      fill
-                      className="object-cover object-[50%_35%]"
+                      name={selectedStory.name}
+                      sizes="(max-width: 768px) 100vw, 640px"
+                      className="object-[50%_35%] text-4xl"
                     />
                   </div>
                 </header>
