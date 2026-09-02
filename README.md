@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FounderFiles
 
-## Getting Started
+**Founder stories, told as timelines.**
 
-First, run the development server:
+A story a day about how a company actually got built — not the press-release version. Each one runs
+as a milestone timeline beside the narrative, so the shape of the path is visible before you read a
+word of it.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+![FounderFiles](docs/img/story.jpg)
+
+---
+
+## The content model
+
+Stories are typed, not free-form HTML. `src/data/stories.ts` defines a discriminated union for the
+sections a story can contain:
+
+```ts
+export type StorySection =
+  | { type: 'text';      text: string }
+  | { type: 'quote';     text: string }
+  | { type: 'lifestyle'; title: string; items: string[] };
+
+export type Story = {
+  id: number;
+  name: string;
+  image: string;
+  title: string;
+  teaser: string;
+  content: StorySection[];
+  milestones: { year: number; title: string; description: string }[];
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+That is the whole reason the layout works. A quote cannot be rendered as a paragraph by accident,
+the milestone rail is a first-class field rather than markup scraped out of prose, and adding a new
+section type is a compiler error everywhere it needs handling rather than a silent gap.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**15 stories** currently — Ryan Hoover, Pieter Levels, Alexis Ohanian, Patrick Collison, Guillermo
+Rauch, Derrick Reimer, Sahil Lavingia and others.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  data/stories.ts        the typed corpus
+  components/
+    Home.tsx             three-column reader, restores position from sessionStorage
+    StoryDetail.tsx      narrative + milestone rail
+    StoryList.tsx        today's story, then previous
+    StoryCard.tsx
+    Navbar.tsx
+    SupabaseProvider.tsx
+  app/
+    story/[id]/          per-story route
+    suggest/             submit a founder to cover
+    login/  logout/      Supabase auth
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next.js App Router, Supabase for auth and suggestions, `marked` for rendering, `react-icons`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Running it
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`.env.local` needs `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`. The stories
+themselves are static, so the reader works without Supabase — only auth and story suggestions need it.
+
+---
+
+## Status
+
+Not currently deployed; `founderfiles.dev` no longer resolves.
+
+⚠️ **12 of the 15 story images are missing from the repo** — `src/data/stories.ts` references
+`/images/<name>.jpg` for every founder, but only three are committed. Those stories render with an
+empty frame. Either the images need adding to `public/images/`, or the component needs a fallback.
+
+## Stack
+
+Next.js · TypeScript · Tailwind · Supabase · marked · react-icons
