@@ -88,11 +88,11 @@ on a release Vercel refuses to build ("vulnerable version of Next.js detected").
 rewritten to expose the same `useSupabaseClient()` and `useUser()` hooks, so the six components that
 consume them only changed an import.
 
-**Images fall back to initials.** All 23 stories name an image; only three of those files are in the
-repo. The old `src={image || '/fallback-image.jpg'}` never fired — the path was always truthy, it
-just 404'd into an empty frame. `FounderImage` catches the load failure and draws the founder's
-initials on a colour derived from their name, so a missing file degrades instead of leaving a hole.
-Dropping real images into `public/images/` still takes precedence.
+**Images degrade instead of breaking.** The old `src={image || '/fallback-image.jpg'}` tested the
+path rather than the load — and the path was always set, so a missing file 404'd into an empty
+frame rather than reaching the fallback. `FounderImage` catches the load failure and draws the
+founder's initials on a colour derived from their name. All 24 portraits are present, so it only
+fires if one goes missing or a new story is added ahead of its image.
 
 ## Stack
 
