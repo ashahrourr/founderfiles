@@ -6,6 +6,8 @@ A story a day about how a company actually got built — not the press-release v
 as a milestone timeline beside the narrative, so the shape of the path is visible before you read a
 word of it.
 
+🔗 **[founderfiles.vercel.app](https://founderfiles.vercel.app)**
+
 ![FounderFiles](docs/img/story.jpg)
 
 ---
@@ -76,6 +78,9 @@ themselves are static, so the reader works without Supabase — only auth and st
 ---
 
 ## Status
+
+Deployed and building cleanly. The original custom domain, `founderfiles.dev`, has lapsed — it no
+longer has DNS records — so the `.vercel.app` address is the live one.
 
 Auth runs on **`@supabase/ssr`**. The original build used `@supabase/auth-helpers-react`, which
 Supabase has deprecated and which broke on any Next.js newer than 15.3.1 — leaving the project stuck
