@@ -77,7 +77,17 @@ themselves are static, so the reader works without Supabase — only auth and st
 
 ## Status
 
-Not currently deployed; `founderfiles.dev` no longer resolves.
+Not currently deployed. `founderfiles.dev` no longer resolves, and Vercel refuses to build the
+project: **"Vulnerable version of Next.js detected."**
+
+The bind is that the two fixes conflict. Next 15.3.1 builds cleanly but is the version Vercel
+blocks. Anything newer builds *until* it reaches `/login` and `/logout`, which fail with
+`Cannot find module for page` — those pages use **`@supabase/auth-helpers-react`**, which Supabase
+has deprecated in favour of `@supabase/ssr` and which does not survive the upgrade.
+
+**To bring it back:** migrate `SupabaseProvider.tsx`, `login/page.tsx`, `logout/page.tsx` and the
+`useUser()` call in `Home.tsx` from `auth-helpers` to `@supabase/ssr`, then take the current Next 15.
+The stories are static, so the reader itself has no such dependency.
 
 ⚠️ **12 of the 15 story images are missing from the repo** — `src/data/stories.ts` references
 `/images/<name>.jpg` for every founder, but only three are committed. Those stories render with an
