@@ -38,7 +38,7 @@ That is the whole reason the layout works. A quote cannot be rendered as a parag
 the milestone rail is a first-class field rather than markup scraped out of prose, and adding a new
 section type is a compiler error everywhere it needs handling rather than a silent gap.
 
-**15 stories** currently — Ryan Hoover, Pieter Levels, Alexis Ohanian, Patrick Collison, Guillermo
+**23 stories** currently — Ryan Hoover, Pieter Levels, Alexis Ohanian, Patrick Collison, Guillermo
 Rauch, Derrick Reimer, Sahil Lavingia and others.
 
 ---
@@ -88,7 +88,7 @@ on a release Vercel refuses to build ("vulnerable version of Next.js detected").
 rewritten to expose the same `useSupabaseClient()` and `useUser()` hooks, so the six components that
 consume them only changed an import.
 
-**Images fall back to initials.** Every story names an image, but most of those files are not in the
+**Images fall back to initials.** All 23 stories name an image; only three of those files are in the
 repo. The old `src={image || '/fallback-image.jpg'}` never fired — the path was always truthy, it
 just 404'd into an empty frame. `FounderImage` catches the load failure and draws the founder's
 initials on a colour derived from their name, so a missing file degrades instead of leaving a hole.
